@@ -9,4 +9,4 @@ A collection of my Frontend Mentor challenges to keep track of my progress over 
 ![](order-summary-card/screenshot.png)
 ![](perfume-product-card/screenshot.png)
 ![](qr-code-component/screenshot.png)
-![](stats-preview-card-component/screenshot.png)
+![]()
