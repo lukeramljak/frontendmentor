@@ -12,10 +12,49 @@
     />
 
     <title>Frontend Mentor | Stats preview card component</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    Get insights that help your business grow. Discover the benefits of data
-    analytics and make better decisions regarding revenue, customer experience,
-    and overall efficiency. 10k+ companies 314 templates 12m+ queries
+    <main>
+      <article class="card">
+        <picture class="card__img">
+          <source srcset="images/image-header-mobile.jpg" />
+          <img src="images/image-header-mobile.jpg" alt="image-header" />
+          <div class="overlay"></div>
+        </picture>
+        <div class="card__content">
+          <h1 class="card__title">
+            Get <span class="accent">insights</span> that help your business
+            grow.
+          </h1>
+          <p>
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+          <div class="flex-group">
+            <div>
+              <h2 class="card__stats--bold">10k+</h2>
+              <p class="card__stats">companies</p>
+            </div>
+            <div>
+              <h2 class="card__stats--bold">314</h2>
+              <p class="card__stats">templates</p>
+            </div>
+            <div>
+              <h2 class="card__stats--bold">12M+</h2>
+              <p class="card__stats">queries</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
   </body>
 </html>
