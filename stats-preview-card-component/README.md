@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/stats-preview-card-component-80rLdhK_6N)
+- Live Site URL: [Netlify](https://lukeramljak-stats-preview-card.netlify.app/)
 
 ## My process
 
