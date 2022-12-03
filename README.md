@@ -1,6 +1,6 @@
 # Frontend Mentor Challenges
 
-Putting together a collection of my frontend mentor challenges to keep track of my progress over time.
+A collection of my Frontend Mentor challenges to keep track of my progress over time.
 
 ![](3-col-preview-card/screenshot.png)
 ![](nft-preview-card/screenshot.png)
