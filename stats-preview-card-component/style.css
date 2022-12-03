@@ -136,14 +136,16 @@ body {
 
 @media screen and (min-width: 35em) {
   .card {
-    width: 80%;
     max-width: 1350px;
     flex-direction: row-reverse;
   }
   .card__content {
-    max-width: 550px;
+    justify-content: center;
+    max-width: 510px;
     text-align: left;
-    padding: 5rem;
+    gap: 2rem;
+    padding: 4rem;
+    margin-right: 60px;
   }
   .card__title {
     font-size: var(--fs-heading-large);
@@ -152,7 +154,7 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 3rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     padding: 0;
   }
 }
