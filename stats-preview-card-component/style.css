@@ -14,7 +14,7 @@
   --ff-base: "Inter", sans-serif;
   --ff-accent: "Lexend Deca", sans-serif;
 
-  --fs-heading-large: 2rem;
+  --fs-heading-large: 2.25rem;
   --fs-heading: 1.75rem;
   --fs-subheading: 1.5rem;
   --fs-base: 0.9375rem;
@@ -137,7 +137,7 @@ body {
 @media screen and (min-width: 35em) {
   .card {
     width: 80%;
-    max-width: 1400px;
+    max-width: 1200px;
     flex-direction: row-reverse;
   }
   .card__content {
