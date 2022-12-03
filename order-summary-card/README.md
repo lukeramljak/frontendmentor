@@ -1,4 +1,4 @@
-# Frontend Mentor -  Order Summary component solution
+# Frontend Mentor - Order Summary component solution
 
 This is a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/final-product.png)
+![](screenshot.png)
 
 ### Links
 
