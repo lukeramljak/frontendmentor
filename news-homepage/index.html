@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+    <title>Frontend Mentor | News homepage</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href=""><img src="/assets/images/logo.svg" height="28" alt="" /></a>
+        <ul>
+          <a href="#">
+            <li>Home</li>
+          </a>
+          <a href="#">
+            <li>New</li>
+          </a>
+          <a href="#">
+            <li>Popular</li>
+          </a>
+          <a href="#">
+            <li>Trending</li>
+          </a>
+          <a href="#">
+            <li>Categories</li>
+          </a>
+        </ul>
+        <img src="/assets/images/icon-menu.svg" height="17" alt="" />
+      </nav>
+    </header>
+    <main>
+      <div class="section section__hero">
+        <picture>
+          <source
+            class="section__hero--img-desktop"
+            media="(min-width: 900px)"
+            srcset="assets/images/image-web-3-desktop.jpg"
+          />
+          <img class="section__hero--img-mobile" src="/assets/images/image-web-3-mobile.jpg" alt="" />
+        </picture>
+        <h1 class="section__hero__title">The Bright Future of Web 3.0?</h1>
+        <p class="section-body">
+          We dive into the next evolution of the web that claims to put the power of the platforms back into the hands
+          of the people. But is it really fulfilling its promise?
+        </p>
+        <button class="btn">Read more</button>
+      </div>
+
+      <div class="section section__new">
+        <h3 class="section__new__heading">New</h3>
+        <div>
+          <h4 class="subheading">Hydrogen VS Electric Cars</h4>
+          <p class="section-body">Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </div>
+        <div class="hr-line"></div>
+        <div>
+          <h4 class="subheading">The Downsides of AI Artistry</h4>
+          <p class="section-body">What are the possible adverse effects of on-demand AI image generation?</p>
+        </div>
+        <div class="hr-line"></div>
+        <div>
+          <h4 class="subheading">Is VC Funding Drying Up?</h4>
+          <p class="section-body">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        </div>
+      </div>
+
+      <div class="section section__list">
+        <div class="section__list-item">
+          <img src="/assets/images/image-retro-pcs.jpg" alt="" />
+          <div class="section__list-content">
+            <h3 class="grey-numbers">01</h3>
+            <h5 class="sub-subheading">Reviving Retro PCs</h5>
+            <p class="section-body">What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </div>
+        <div class="section__list-item">
+          <img src="/assets/images/image-top-laptops.jpg" alt="" />
+          <div class="section__list-content">
+            <h3 class="grey-numbers">02</h3>
+            <h5 class="sub-subheading">Top 10 Laptops of 2022</h5>
+            <p class="section-body">Our best picks for various needs and budgets.</p>
+          </div>
+        </div>
+        <div class="section__list-item">
+          <img src="/assets/images/image-gaming-growth.jpg" alt="" />
+          <div class="section__list-content">
+            <h3 class="grey-numbers">03</h3>
+            <h5 class="sub-subheading">The Growth of Gaming</h5>
+            <p class="section-body">How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

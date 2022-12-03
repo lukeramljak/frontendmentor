@@ -1,0 +1,174 @@
+:root {
+  --clr-primary-500: hsl(217, 54%, 11%);
+  --clr-primary-400: hsl(216, 50%, 16%);
+  --clr-primary-300: hsl(215, 32%, 27%);
+
+  --clr-secondary-400: hsl(215, 51%, 70%);
+
+  --clr-accent-400: hsl(178, 100%, 50%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --ff-base: "Outfit", sans-serif;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 600;
+}
+
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* general styling */
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-light);
+  font-size: 1rem;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-500);
+
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+
+/* utitilies */
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* product styles */
+.product {
+  --content-padding: 1.625rem;
+  --content-spacing-main: 1.25rem;
+  --content-spacing-secondary: 0.75rem;
+
+  display: grid;
+  gap: var(--content-spacing-main);
+  background-color: var(--clr-primary-400);
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 330px;
+  padding: var(--content-padding);
+}
+
+.product__image {
+  border-radius: 0.5rem;
+}
+
+.product__title {
+  font-size: 1.375rem;
+}
+
+.product__content {
+  display: grid;
+  gap: var(--content-spacing-secondary);
+}
+
+.product__body {
+  color: var(--clr-secondary-400);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent-400);
+}
+
+.time-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--clr-secondary-400);
+}
+
+.hr-line {
+  border: 0.5px solid var(--clr-secondary-400);
+  margin: 0.25rem 0;
+  opacity: 0.2;
+}
+
+.product__creator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9375rem;
+}
+
+.product__creator img {
+  border: 1px solid var(--clr-neutral-100);
+  border-radius: 100%;
+}
+
+.creator {
+  color: var(--clr-secondary-400);
+}
