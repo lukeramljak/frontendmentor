@@ -25,11 +25,6 @@
   <body>
     <main>
       <article class="card">
-        <picture class="card__img">
-          <source srcset="images/image-header-mobile.jpg" />
-          <img src="images/image-header-mobile.jpg" alt="image-header" />
-          <div class="overlay"></div>
-        </picture>
         <div class="card__content">
           <h1 class="card__title">
             Get <span class="accent">insights</span> that help your business
@@ -39,21 +34,25 @@
             Discover the benefits of data analytics and make better decisions
             regarding revenue, customer experience, and overall efficiency.
           </p>
-          <div class="flex-group">
-            <div>
-              <h2 class="card__stats--bold">10k+</h2>
+          <ul class="flex-group">
+            <li>
+              <p class="card__stats--bold">10k+</p>
               <p class="card__stats">companies</p>
-            </div>
-            <div>
-              <h2 class="card__stats--bold">314</h2>
+            </li>
+            <li>
+              <p class="card__stats--bold">314</p>
               <p class="card__stats">templates</p>
-            </div>
-            <div>
-              <h2 class="card__stats--bold">12M+</h2>
+            </li>
+            <li>
+              <p class="card__stats--bold">12M+</p>
               <p class="card__stats">queries</p>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
+        <picture class="card__img">
+          <source srcset="images/image-header-mobile.jpg" />
+          <img src="images/image-header-mobile.jpg" alt="" aria-hidden="true" />
+        </picture>
       </article>
     </main>
   </body>
