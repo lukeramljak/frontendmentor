@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/stats-preview-card-component-80rLdhK_6N)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/testimonials-grid-section-7cyg6gegAp)
 - Live Site URL: [Netlify](https://lukeramljak-testimonial-grid.netlify.app/)
 
 ## My process
