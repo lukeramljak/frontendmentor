@@ -12,3 +12,4 @@ A collection of my Frontend Mentor challenges to keep track of my progress over 
 ![](./stats-preview-card-component/screenshot.png)
 ![](./profile-card-component/screenshot.png)
 ![](./single-price-grid-component/screenshot.png)
+![](./testimonial-grid-section/screenshot.png)
