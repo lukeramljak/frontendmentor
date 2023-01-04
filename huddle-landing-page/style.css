@@ -36,15 +36,6 @@ img {
 button {
   font: inherit;
 }
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
 
 body {
   color: var(--clr-neutral-100);
@@ -56,6 +47,11 @@ body {
   font-family: var(--ff-body);
   text-align: center;
   line-height: 1.5;
+
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 4rem;
 }
 
 h1 {
@@ -68,20 +64,21 @@ p {
 }
 
 main {
-  display: grid;
-  padding: 3rem;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.logo {
+  width: 150px;
 }
 
 .body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-}
-
-.logo {
-  width: 150px;
+  gap: 1rem;
 }
 
 .btn {
@@ -89,9 +86,10 @@ main {
   border: none;
   color: var(--clr-primary-400);
   padding: 0.8rem;
-  width: 70%;
+  width: 15em;
   border-radius: 50px;
   box-shadow: 2px 5px 10px hsla(256, 39%, 10%, 0.409);
+  margin-top: 1rem;
 }
 
 .btn:is(:hover, :focus) {
@@ -99,11 +97,11 @@ main {
   transition: 0.3s;
 }
 
-.social-icons {
+/* social icons */
+footer {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
 }
 
 .fa-brands {
@@ -118,4 +116,39 @@ main {
   color: var(--clr-accent-400);
   --fa-border-color: var(--clr-accent-400);
   transition: 0.3s;
+}
+
+@media screen and (min-width: 30em) {
+  body {
+    background-image: url("images/bg-desktop.svg");
+  }
+}
+
+@media screen and (min-width: 60em) {
+  body {
+    background-image: url("images/bg-desktop.svg");
+    background-size: cover;
+    text-align: left;
+    justify-content: center;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .body {
+    align-items: flex-start;
+  }
+  .btn {
+    width: 12em;
+    margin-top: auto;
+  }
+  .col-right {
+    width: 40%;
+    max-width: 600px;
+  }
+  footer {
+    justify-content: flex-end;
+  }
 }
