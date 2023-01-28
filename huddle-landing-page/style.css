@@ -6,6 +6,7 @@
   --ff-header: "Poppins", sans-serif;
   --ff-body: "Open Sans", sans-serif;
 
+  --fs-800: 2.5rem;
   --fs-600: 2rem;
   --fs-400: 1.125rem;
 
@@ -50,13 +51,12 @@ body {
 
   display: flex;
   flex-direction: column;
-  padding: 3rem;
-  gap: 4rem;
 }
 
 h1 {
   font-family: var(--ff-header);
   font-size: var(--fs-600);
+  line-height: 1.3;
 }
 
 p {
@@ -67,7 +67,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1400px;
   gap: 3rem;
+  padding: 0 3rem 0 3rem;
+}
+
+header {
+  padding: 3rem;
 }
 
 .logo {
@@ -93,22 +99,24 @@ main {
 }
 
 .btn:is(:hover, :focus) {
+  color: var(--clr-neutral-100);
   background-color: var(--clr-accent-400);
   transition: 0.3s;
 }
 
-/* social icons */
 footer {
   display: flex;
   justify-content: center;
+  margin-top: 3rem;
   gap: 1rem;
+  max-width: 1400px;
 }
 
 .fa-brands {
   color: var(--clr-neutral-100);
   height: 36px;
   width: 36px;
-  --fa-border-radius: 50px;
+  --fa-border-radius: 50em;
   --fa-border-padding: 0.5rem;
 }
 
@@ -140,6 +148,9 @@ footer {
   .body {
     align-items: flex-start;
   }
+  h1 {
+    font-size: var(--fs-800);
+  }
   .btn {
     width: 12em;
     margin-top: auto;
@@ -150,5 +161,6 @@ footer {
   }
   footer {
     justify-content: flex-end;
+    margin: 2rem 3rem 0 0;
   }
 }

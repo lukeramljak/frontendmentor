@@ -3,92 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-    <title>Frontend Mentor | News homepage</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script src="nav.js" defer></script>
+    <title>Frontend Mentor | News homepage</title>
   </head>
   <body>
-    <header>
+    <header class="primary-header">
+      <div>
+        <img
+          class="logo"
+          src="images/logo.svg"
+          height="32"
+          aria-hidden="true"
+        />
+      </div>
+
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+      </button>
+
       <nav>
-        <a href=""><img src="images/logo.svg" height="28" alt="" /></a>
-        <ul>
-          <a href="#">
-            <li>Home</li>
-          </a>
-          <a href="#">
-            <li>New</li>
-          </a>
-          <a href="#">
-            <li>Popular</li>
-          </a>
-          <a href="#">
-            <li>Trending</li>
-          </a>
-          <a href="#">
-            <li>Categories</li>
-          </a>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation"
+        >
+          <a href="#"><li>Home</li></a>
+          <a href="#"><li>New</li></a>
+          <a href="#"><li>Popular</li></a>
+          <a href="#"><li>Trending</li></a>
+          <a href="#"><li>Categories</li></a>
         </ul>
-        <img src="images/icon-menu.svg" height="17" alt="" />
       </nav>
     </header>
     <main>
       <section class="hero">
-        <picture class="hero__img">
-          <source media="(min-width: 50em)" srcset="images/image-web-3-desktop.jpg" />
-          <img src="images/image-web-3-mobile.jpg" alt="" />
+        <picture>
+          <source
+            media="(min-width: 40em)"
+            srcset="images/image-web-3-desktop.jpg"
+          />
+          <img
+            src="images/image-web-3-mobile.jpg"
+            alt="multi-coloured blocks"
+          />
         </picture>
-        <h1 class="hero__title">The Bright Future of Web 3.0?</h1>
-        <p>
-          We dive into the next evolution of the web that claims to put the power of the platforms back into the hands
-          of the people. But is it really fulfilling its promise?
-        </p>
-        <button class="btn">Read more</button>
+        <div class="hero__content">
+          <h1 class="hero__title">The Bright Future of Web 3.0?</h1>
+          <p>
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <button class="btn">Read more</button>
+        </div>
       </section>
-
-      <section class="new">
-        <h3 class="new__heading">New</h3>
+      <section class="new-stories">
+        <h2 class="new-stories__heading">
+          New <span class="sr-only">Stories</span>
+        </h2>
         <div>
-          <h4 class="new__subheading">Hydrogen VS Electric Cars</h4>
+          <a href="#">
+            <h3>Hydrogen VS Electric Cars</h3>
+          </a>
           <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
         </div>
         <hr />
         <div>
-          <h4 class="new__subheading">The Downsides of AI Artistry</h4>
-          <p>What are the possible adverse effects of on-demand AI image generation?</p>
+          <a href="#">
+            <h3>The Downsides of AI Artistry</h3>
+          </a>
+          <p>
+            What are the possible adverse effects of on-demand AI image
+            generation?
+          </p>
         </div>
         <hr />
         <div>
-          <h4 class="new__subheading">Is VC Funding Drying Up?</h4>
-          <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+          <a href="#">
+            <h3>Is VC Funding Drying Up?</h3>
+          </a>
+          <p>
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </p>
         </div>
       </section>
-
       <section class="list">
         <div class="list__item">
-          <img src="images/image-retro-pcs.jpg" alt="" />
+          <img
+            src="images/image-retro-pcs.jpg"
+            alt="retro PC surrounded by cassettes, keyboards and other retro items"
+          />
           <div class="list__content">
-            <h3 class="list__numbers">01</h3>
-            <h5 class="list__heading">Reviving Retro PCs</h5>
+            <span aria-hidden="true">01</span>
+            <a href="#">
+              <h2>Reviving Retro PCs</h2>
+            </a>
             <p>What happens when old PCs are given modern upgrades?</p>
           </div>
         </div>
         <div class="list__item">
-          <img src="images/image-top-laptops.jpg" alt="" />
+          <img
+            src="images/image-top-laptops.jpg"
+            alt="close up of a laptop keyboard with a red light underneath"
+          />
           <div class="list__content">
-            <h3 class="list__numbers">02</h3>
-            <h5 class="list__heading">Top 10 Laptops of 2022</h5>
+            <span aria-hidden="true">02</span>
+            <a href="">
+              <h2>Top 10 Laptops of 2022</h2>
+            </a>
             <p>Our best picks for various needs and budgets.</p>
           </div>
         </div>
         <div class="list__item">
-          <img src="images/image-gaming-growth.jpg" alt="" />
+          <img
+            src="images/image-gaming-growth.jpg"
+            alt="white DualShock 4 controller hovering above a hand"
+          />
           <div class="list__content">
-            <h3 class="list__numbers">03</h3>
-            <h5 class="list__heading">The Growth of Gaming</h5>
+            <span aria-hidden="true">03</span>
+            <a href="#">
+              <h2>The Growth of Gaming</h2>
+            </a>
             <p>How the pandemic has sparked fresh opportunities.</p>
           </div>
         </div>
