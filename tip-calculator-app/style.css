@@ -1,0 +1,41 @@
+:root {
+  --clr-cyan-strong: hsl(172, 67%, 45%);
+  --clr-cyan-darkest: hsl(183, 100%, 15%);
+  --clr-cyan-dark: hsl(186, 14%, 43%);
+  --clr-cyan-grey: hsl(184, 14%, 56%);
+  --clr-cyan-light: hsl(185, 41%, 84%);
+  --clr-cyan-lighter: hsl(189, 41%, 97%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --font-body: "Space Mono", monospace;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--clr-cyan-light);
+  color: var(--clr-cyan-grey);
+}
+
+.container {
+  background-color: var(--clr-cyan-lighter);
+
+  margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculations {
+  background-color: var(--clr-cyan-darkest);
+  color: var(--clr-white);
+
+  display: flex;
+  flex-direction: column;
+}
