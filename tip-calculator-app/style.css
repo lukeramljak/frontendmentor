@@ -15,6 +15,11 @@
   box-sizing: border-box;
 }
 
+button {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--clr-cyan-light);
@@ -31,7 +36,7 @@ h1 {
 }
 
 .container {
-  background-color: var(--clr-cyan-lighter);
+  background-color: var(--clr-white);
 
   display: flex;
   flex-direction: column;
@@ -53,6 +58,31 @@ h1 {
   gap: 10px;
 }
 
+.button-grid button {
+  background-color: var(--clr-cyan-darkest);
+  color: var(--clr-white);
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.button-grid button:is(:hover, :focus-visible) {
+  background-color: var(--clr-cyan-strong);
+  color: var(--clr-cyan-darkest);
+}
+
+.button-grid button:last-child {
+  background-color: var(--clr-cyan-lighter);
+  color: var(--clr-cyan-dark);
+}
+
+.button-grid button:last-child:is(:hover, :focus-visible) {
+  background-color: var(--clr-cyan-strong);
+  color: var(--clr-cyan-darkest);
+}
+
 .half-calculations {
   background-color: var(--clr-cyan-darkest);
   color: var(--clr-white);
@@ -62,4 +92,20 @@ h1 {
 
   padding: 1rem;
   border-radius: 12px;
+}
+
+.half-calculations button {
+  background-color: var(--clr-cyan-strong);
+  color: var(--clr-cyan-darkest);
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.half-calculations button:is(:hover, :focus-visible) {
+  background-color: var(--clr-cyan-light);
+  color: var(--clr-cyan-darkest);
 }
