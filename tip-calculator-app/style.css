@@ -146,6 +146,10 @@ input {
   color: var(--clr-cyan-darkest);
 }
 
+.button-grid input {
+  height: revert;
+}
+
 .section-calculations {
   background-color: var(--clr-cyan-darkest);
   color: var(--clr-white);
@@ -162,7 +166,7 @@ input {
 .section-calculations button {
   background-color: var(--clr-cyan-strong);
   color: var(--clr-cyan-darkest);
-  font-size: 1rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
   cursor: pointer;
   border: none;
