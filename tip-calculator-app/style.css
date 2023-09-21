@@ -81,6 +81,7 @@ button {
   flex-direction: column;
   gap: 1.5rem;
 
+  margin-inline: 1rem;
   padding: 2rem;
   border-radius: 20px;
 }
