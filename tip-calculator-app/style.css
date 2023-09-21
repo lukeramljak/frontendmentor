@@ -63,10 +63,6 @@ body {
   background-color: var(--clr-cyan-light);
   color: var(--clr-cyan-grey);
   font-weight: 700;
-
-  height: 100vh;
-  display: grid;
-  place-content: center;
 }
 
 .logo {
@@ -214,6 +210,12 @@ input:focus-visible {
 }
 
 @media (width > 768px) {
+  body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+  }
+
   main {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
