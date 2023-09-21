@@ -25,25 +25,25 @@
             <span>Bill</span>
             <div class="input-container">
               <img src="./images/icon-dollar.svg" aria-hidden="true" class="input-icon">
-              <input type="tel" placeholder="0.00"></input>
+              <input id="bill-amount" type="tel" placeholder="0.00"></input>
             </div>
           </div>
           <div class="container-item">
             <span>Select Tip %</span>
             <div class="button-grid">
-              <button>5%</button>
-              <button>10%</button>
-              <button>15%</button>
-              <button>25%</button>
-              <button>50%</button>
-              <input type="tel" placeholder="Custom"></input>
+              <button data-percentage="5">5%</button>
+              <button data-percentage="10">10%</button>
+              <button data-percentage="15">15%</button>
+              <button data-percentage="25">25%</button>
+              <button data-percentage="50">50%</button>
+              <input id="custom-tip" type="tel" placeholder="Custom"></input>
             </div>
           </div>
           <div class="container-item">
             <span>Number of People</span>
             <div class="input-container">
               <img src="./images/icon-person.svg" aria-hidden="true" class="input-icon">
-              <input type="tel" placeholder="0"></input>
+              <input id="people" type="tel" placeholder="0"></input>
             </div>
           </div>
         </div>
@@ -54,17 +54,17 @@
                 <span>Tip Amount</span>
                 <span>/ person</span>
               </div>
-              <span class="totals">$0.00</span>
+              <span id="tip-amount" class="totals">$0.00</span>
             </div>
             <div class="calculation-row">
               <div class="calculation-heading">
                 <span>Total</span>
                 <span>/ person</span>
               </div>
-              <span class="totals">$0.00</span>
+              <span id="total" class="totals">$0.00</span>
             </div>
           </div>
-          <button type="reset">Reset</button>
+          <button id="reset-button" type="reset">Reset</button>
         </div>
     </main>
   </body>
