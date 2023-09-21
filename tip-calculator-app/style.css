@@ -150,6 +150,7 @@ input:focus-visible {
 
 .button-grid input {
   height: revert;
+  text-align: center;
 }
 
 .calculations {
