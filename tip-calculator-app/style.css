@@ -81,7 +81,7 @@ button {
 
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 
   padding: 2rem;
   border-radius: 20px;
@@ -153,7 +153,6 @@ input {
 .section-calculations {
   background-color: var(--clr-cyan-darkest);
   color: var(--clr-white);
-  font-size: 0.875rem;
 
   display: flex;
   flex-direction: column;
@@ -177,4 +176,25 @@ input {
 .section-calculations button:is(:hover, :focus-visible) {
   background-color: var(--clr-cyan-light);
   color: var(--clr-cyan-darkest);
+}
+
+.calculation-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calculation-row span:last-of-type {
+  color: var(--clr-cyan-strong);
+  font-size: 1.5rem;
+}
+
+.calculation-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculation-heading span:last-of-type {
+  color: var(--clr-cyan-grey);
+  font-size: 0.75rem;
 }
