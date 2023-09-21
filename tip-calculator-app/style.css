@@ -189,7 +189,7 @@ input:focus-visible {
 
 .calculation-row span:last-of-type {
   color: var(--clr-cyan-strong);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 .calculation-heading {
