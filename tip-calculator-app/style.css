@@ -104,6 +104,10 @@ input {
   font-size: 1.5rem;
 }
 
+input:focus-visible {
+  outline: 2px solid var(--clr-cyan-strong);
+}
+
 .input-icon {
   position: absolute;
   left: 18px;
@@ -130,19 +134,13 @@ input {
   padding: 8px;
 }
 
-.button-grid button:is(:hover, :focus-visible) {
+.button-grid button:hover {
   background-color: var(--clr-cyan-strong);
   color: var(--clr-cyan-darkest);
 }
 
-.button-grid button:last-child {
-  background-color: var(--clr-cyan-lighter);
-  color: var(--clr-cyan-dark);
-}
-
-.button-grid button:last-child:is(:hover, :focus-visible) {
-  background-color: var(--clr-cyan-strong);
-  color: var(--clr-cyan-darkest);
+.button-grid button:focus-visible {
+  outline: 2px solid var(--clr-cyan-strong);
 }
 
 .button-grid input {
@@ -172,9 +170,13 @@ input {
   padding: 8px;
 }
 
-.section-calculations button:is(:hover, :focus-visible) {
+.section-calculations button:hover {
   background-color: var(--clr-cyan-light);
   color: var(--clr-cyan-darkest);
+}
+
+.section-calculations button:focus-visible {
+  outline: 2px solid var(--clr-cyan-light);
 }
 
 .calculation-row {
