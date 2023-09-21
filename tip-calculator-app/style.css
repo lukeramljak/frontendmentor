@@ -67,7 +67,7 @@ body {
 
 .logo {
   margin: auto;
-  padding: 2rem;
+  padding: 3.5rem;
 }
 
 button {
@@ -81,7 +81,6 @@ button {
   flex-direction: column;
   gap: 1.5rem;
 
-  margin-inline: 1rem;
   padding: 2rem;
   border-radius: 20px;
 }
@@ -121,7 +120,7 @@ input:focus-visible {
 
 .button-grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
 
