@@ -70,6 +70,14 @@ customTipInput.addEventListener("input", () => {
 });
 
 peopleInput.addEventListener("input", () => {
+  const zeroError = document.querySelector(".zero-error");
+  if (peopleInput.value == "0") {
+    peopleInput.style.outline = "2px solid red";
+    zeroError.style.display = "block";
+  } else {
+    peopleInput.removeAttribute("style");
+    zeroError.style.display = "none";
+  }
   amountOfPeople = parseInt(peopleInput.value);
   updateTotals();
 });

@@ -132,6 +132,16 @@ button {
   height: revert;
 }
 
+.people {
+  display: flex;
+  justify-content: space-between;
+}
+
+.zero-error {
+  color: red;
+  display: none;
+}
+
 .calculations {
   background-color: var(--clr-cyan-darkest);
   color: var(--clr-white);
