@@ -121,7 +121,7 @@ button {
 .button-grid button:hover {
   background-color: var(--clr-cyan-strong);
   color: var(--clr-cyan-darkest);
-  transition: 0.4s;
+  transition: 0.3s;
 }
 
 .button-grid button:focus-visible {
@@ -146,20 +146,22 @@ button {
 }
 
 .calculations button {
-  background-color: var(--clr-cyan-strong);
+  background-color: var(--clr-cyan-grey);
   color: var(--clr-cyan-darkest);
+  opacity: 20%;
   font-size: 1.25rem;
   text-transform: uppercase;
 }
 
 .calculations button:hover {
-  background-color: var(--clr-cyan-light);
+  background-color: var(--clr-cyan-strong);
   color: var(--clr-cyan-darkest);
-  transition: 0.4s;
+  opacity: 100%;
+  transition: 0.3s;
 }
 
 .calculations button:focus-visible {
-  outline: 2px solid var(--clr-cyan-light);
+  outline: 2px solid var(--clr-cyan-strong);
 }
 
 .row {
