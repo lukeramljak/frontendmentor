@@ -43,6 +43,7 @@ body {
   background-color: var(--clr-cyan-light);
   color: var(--clr-cyan-grey);
   font-weight: 700;
+  height: 100vh;
 }
 
 .logo {
@@ -202,6 +203,7 @@ button.selected {
   }
 
   .logo {
+    margin-top: 0;
     margin-bottom: 4rem;
   }
 
