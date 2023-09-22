@@ -120,6 +120,7 @@ button {
 .button-grid button:hover {
   background-color: var(--clr-cyan-strong);
   color: var(--clr-cyan-darkest);
+  transition: 0.4s;
 }
 
 .button-grid button:focus-visible {
@@ -153,6 +154,7 @@ button {
 .calculations button:hover {
   background-color: var(--clr-cyan-light);
   color: var(--clr-cyan-darkest);
+  transition: 0.4s;
 }
 
 .calculations button:focus-visible {
