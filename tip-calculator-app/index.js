@@ -30,8 +30,18 @@ function updateTotals() {
   const tipPerPerson = tip / amountOfPeople;
   const totalPerPerson = (billAmount + tip) / amountOfPeople;
 
-  tipAmount.textContent = `\$${tipPerPerson.toFixed(2)}`;
-  totalAmount.textContent = `\$${totalPerPerson.toFixed(2)}`;
+  if (
+    !isNaN(tipPerPerson) &&
+    isFinite(tipPerPerson) &&
+    !isNaN(totalPerPerson) &&
+    isFinite(totalPerPerson)
+  ) {
+    tipAmount.textContent = `\$${tipPerPerson.toFixed(2)}`;
+    totalAmount.textContent = `\$${totalPerPerson.toFixed(2)}`;
+  } else {
+    tipAmount.textContent = "$0.00";
+    totalAmount.textContent = "$0.00";
+  }
 }
 
 billInput.addEventListener("input", () => {
