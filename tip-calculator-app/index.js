@@ -1,6 +1,6 @@
 const billInput = document.getElementById("bill-amount");
 const tipButtons = document.querySelectorAll("[data-percentage]");
-const customTipButton = document.getElementById("custom-tip");
+const customTipInput = document.getElementById("custom-tip");
 const peopleInput = document.getElementById("people");
 const tipAmount = document.getElementById("tip-amount");
 const totalAmount = document.getElementById("total");
@@ -15,7 +15,7 @@ function resetValues() {
   tipButtons.forEach((button) => {
     button.classList.remove("selected");
   });
-  customTipButton.value = null;
+  customTipInput.value = null;
   peopleInput.value = null;
   tipAmount.textContent = "$0.00";
   totalAmount.textContent = "$0.00";
@@ -23,12 +23,12 @@ function resetValues() {
 
 let billAmount = 0;
 let selectedPercentage = 0;
-let people = 0;
+let amountOfPeople = 0;
 
 function updateTotals() {
   const tip = billAmount * selectedPercentage;
-  const tipPerPerson = tip / people;
-  const totalPerPerson = (billAmount + tip) / people;
+  const tipPerPerson = tip / amountOfPeople;
+  const totalPerPerson = (billAmount + tip) / amountOfPeople;
 
   tipAmount.textContent = `\$${tipPerPerson.toFixed(2)}`;
   totalAmount.textContent = `\$${totalPerPerson.toFixed(2)}`;
@@ -52,13 +52,13 @@ tipButtons.forEach((button) => {
 
 // TODO: disable tip buttons if custom tip entered
 
-customTipButton.addEventListener("input", () => {
-  selectedPercentage = parseFloat(customTipButton.value) / 100;
+customTipInput.addEventListener("input", () => {
+  selectedPercentage = parseFloat(customTipInput.value) / 100;
   updateTotals();
 });
 
 peopleInput.addEventListener("input", () => {
-  people = parseInt(peopleInput.value);
+  amountOfPeople = parseInt(peopleInput.value);
   updateTotals();
 });
 
