@@ -55,14 +55,16 @@ tipButtons.forEach((button) => {
       otherButtons.classList.remove("selected");
     });
     button.classList.add("selected");
+    customTipInput.value = null;
     selectedPercentage = button.getAttribute("data-percentage") / 100;
     updateTotals();
   });
 });
 
-// TODO: disable tip buttons if custom tip entered
-
 customTipInput.addEventListener("input", () => {
+  tipButtons.forEach((button) => {
+    button.classList.remove("selected");
+  });
   selectedPercentage = parseFloat(customTipInput.value) / 100;
   updateTotals();
 });
