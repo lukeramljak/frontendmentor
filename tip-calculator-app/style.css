@@ -182,6 +182,11 @@ button {
   display: block;
 }
 
+button.selected {
+  background-color: var(--clr-cyan-strong);
+  color: var(--clr-cyan-darkest);
+}
+
 @media (width > 768px) {
   body {
     display: grid;
