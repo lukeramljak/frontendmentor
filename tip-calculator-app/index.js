@@ -3,7 +3,7 @@ const tipButtons = document.querySelectorAll("[data-percentage]");
 const customTipButton = document.getElementById("custom-tip");
 const peopleInput = document.getElementById("people");
 const tipAmount = document.getElementById("tip-amount");
-const total = document.getElementById("total");
+const totalAmount = document.getElementById("total");
 const resetButton = document.getElementById("reset-button");
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -12,10 +12,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function resetValues() {
   billInput.value = null;
+  tipButtons.forEach((button) => {
+    button.classList.remove("selected");
+  });
   customTipButton.value = null;
   peopleInput.value = null;
   tipAmount.textContent = "$0.00";
-  total.textContent = "$0.00";
+  totalAmount.textContent = "$0.00";
 }
 
 let billAmount = 0;
@@ -27,10 +30,8 @@ function updateTotals() {
   const tipPerPerson = tip / people;
   const totalPerPerson = (billAmount + tip) / people;
 
-  // TODO: figure out why this returns infinity
-
   tipAmount.textContent = `\$${tipPerPerson.toFixed(2)}`;
-  total.textContent = `\$${totalPerPerson.toFixed(2)}`;
+  totalAmount.textContent = `\$${totalPerPerson.toFixed(2)}`;
 }
 
 billInput.addEventListener("input", () => {
@@ -58,6 +59,7 @@ customTipButton.addEventListener("input", () => {
 
 peopleInput.addEventListener("input", () => {
   people = parseInt(peopleInput.value);
+  updateTotals();
 });
 
 resetButton.addEventListener("click", () => {
