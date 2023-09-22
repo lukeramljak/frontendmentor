@@ -20,11 +20,11 @@
   <body>
     <img src="./images/logo.svg" alt="splitter logo" class="logo">
     <main>
-        <div class="container">
+        <section>
           <div class="container-item">
             <span>Bill</span>
             <div class="input-container">
-              <img src="./images/icon-dollar.svg" aria-hidden="true" class="input-icon">
+              <img src="./images/icon-dollar.svg" aria-hidden="true">
               <input id="bill-amount" type="tel" placeholder="0.00"></input>
             </div>
           </div>
@@ -42,30 +42,24 @@
           <div class="container-item">
             <span>Number of People</span>
             <div class="input-container">
-              <img src="./images/icon-person.svg" aria-hidden="true" class="input-icon">
+              <img src="./images/icon-person.svg" aria-hidden="true">
               <input id="people" type="tel" placeholder="0"></input>
             </div>
           </div>
-        </div>
-        <div class="container calculations">
-          <div class="calculation-rows">
-            <div class="calculation-row">
-              <div class="calculation-heading">
+        </section>
+        <section class="calculations">
+            <div>
+              <div class="row">
                 <span>Tip Amount</span>
-                <span>/ person</span>
+                <span id="tip-amount">$0.00</span>
               </div>
-              <span id="tip-amount" class="totals">$0.00</span>
-            </div>
-            <div class="calculation-row">
-              <div class="calculation-heading">
+              <div class="row">
                 <span>Total</span>
-                <span>/ person</span>
+                <span id="total">$0.00</span>
               </div>
-              <span id="total" class="totals">$0.00</span>
             </div>
-          </div>
           <button id="reset-button" type="reset">Reset</button>
-        </div>
+        </section>
     </main>
   </body>
 </html>

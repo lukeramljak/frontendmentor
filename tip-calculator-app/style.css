@@ -1,49 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-#root,
-#__next {
-  isolation: isolate;
-}
-
 :root {
   --clr-cyan-strong: hsl(172, 67%, 45%);
   --clr-cyan-darkest: hsl(183, 100%, 15%);
@@ -56,6 +10,28 @@ h6 {
   --font-body: "Space Mono", monospace;
 
   --btn-border-radius: 4px;
+  --container-border-radius: 18px;
+  --btn-padding: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
 html {
@@ -75,22 +51,16 @@ body {
   margin-bottom: 3rem;
 }
 
-button {
-  font-size: 1.5rem;
-}
-
 main {
   background-color: var(--clr-white);
-
   display: grid;
   gap: 1.5rem;
-
   padding: 2rem;
-  border-radius: 20px;
+  border-radius: var(--container-border-radius);
   max-width: 850px;
 }
 
-.container {
+section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -108,12 +78,16 @@ main {
   position: relative;
 }
 
+.input-container img {
+  position: absolute;
+  left: 18px;
+}
+
 input {
   background-color: var(--clr-cyan-lighter);
   color: var(--clr-cyan-darkest);
-  height: 42px;
   width: 100%;
-  padding: 8px 18px;
+  padding: 6px 12px;
   border: none;
   border-radius: var(--btn-border-radius);
   text-align: right;
@@ -124,9 +98,12 @@ input:focus-visible {
   outline: 2px solid var(--clr-cyan-strong);
 }
 
-.input-icon {
-  position: absolute;
-  left: 18px;
+button {
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--btn-border-radius);
+  padding: var(--btn-padding);
 }
 
 .button-grid {
@@ -138,10 +115,6 @@ input:focus-visible {
 .button-grid button {
   background-color: var(--clr-cyan-darkest);
   color: var(--clr-white);
-  cursor: pointer;
-  border: none;
-  border-radius: var(--btn-border-radius);
-  padding: 8px;
 }
 
 .button-grid button:hover {
@@ -155,15 +128,19 @@ input:focus-visible {
 
 .button-grid input {
   height: revert;
-  text-align: center;
 }
 
 .calculations {
   background-color: var(--clr-cyan-darkest);
   color: var(--clr-white);
-
   padding: 1.5rem;
-  border-radius: 14px;
+  border-radius: var(--container-border-radius);
+}
+
+.calculations > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .calculations button {
@@ -171,10 +148,6 @@ input:focus-visible {
   color: var(--clr-cyan-darkest);
   font-size: 1.25rem;
   text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  border-radius: var(--btn-border-radius);
-  padding: 8px;
 }
 
 .calculations button:hover {
@@ -186,52 +159,43 @@ input:focus-visible {
   outline: 2px solid var(--clr-cyan-light);
 }
 
-.calculation-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.calculation-row {
+.row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.totals {
-  color: var(--clr-cyan-strong);
-  font-size: 1.75rem;
-}
-
-.calculation-heading {
+.row > div {
   display: flex;
   flex-direction: column;
 }
 
-.calculation-heading span:last-of-type {
+.row span:last-of-type {
+  color: var(--clr-cyan-strong);
+  font-size: 2rem;
+}
+
+.row > span:first-of-type:after {
+  content: "/ person";
   color: var(--clr-cyan-grey);
   font-size: 0.75rem;
+  display: block;
 }
 
 @media (width > 768px) {
   body {
     display: grid;
     place-content: center;
-    /* height: 100vh; */
   }
 
   main {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
+    gap: 3rem;
   }
 
   .logo {
-    /* margin-top: 0; */
     margin-bottom: 4rem;
-  }
-
-  input {
-    font-size: 1.25rem;
   }
 
   .button-grid {
@@ -242,7 +206,7 @@ input:focus-visible {
     justify-content: space-between;
   }
 
-  .totals {
+  .row span:last-of-type {
     font-size: 2.5rem;
   }
 }
