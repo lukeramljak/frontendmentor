@@ -51,7 +51,7 @@ main {
   color: var(--clr-white);
 }
 
-.input-container {
+form {
   display: flex;
   gap: 1rem;
 }
