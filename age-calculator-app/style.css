@@ -110,3 +110,7 @@ main {
   line-height: 1;
   letter-spacing: -1px;
 }
+
+.result-number {
+  color: var(--clr-purple);
+}
