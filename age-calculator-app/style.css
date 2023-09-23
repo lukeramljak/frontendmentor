@@ -23,15 +23,10 @@ button {
   font: inherit;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--clr-off-white);
   height: 100dvh;
-
   display: grid;
   place-content: center;
 }
@@ -101,6 +96,11 @@ input[type="image"] {
 }
 
 input[type="image"]:hover {
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+input[type="image"]:active {
   background-color: black;
 }
 
