@@ -39,3 +39,7 @@ A collection of my Frontend Mentor challenges (in order of completion) to keep t
 [Testimonials Grid Section](/testimonials-grid-section/)
 
 ![](./testimonials-grid-section/screenshot.png)
+
+[Tip Calculator App](/tip-calculator-app/)
+
+![](./tip-calculator-app/screenshot.png)
