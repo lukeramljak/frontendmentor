@@ -65,6 +65,14 @@ button {
   font: inherit;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100dvh;
   font-family: "Poppins", sans-serif;
+
+  display: grid;
+  place-content: center;
 }
