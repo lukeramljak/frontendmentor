@@ -56,7 +56,7 @@ form {
   gap: 6px;
 }
 
-.input-item label {
+.input-label {
   color: var(--clr-smokey-grey);
   font-size: 0.75rem;
   font-weight: 700;
@@ -74,6 +74,10 @@ form {
 
 .input-item input:focus {
   outline: 1px solid var(--clr-purple);
+}
+
+.input-item > span {
+  display: none;
 }
 
 .label-error {
