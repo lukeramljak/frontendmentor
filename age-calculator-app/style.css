@@ -95,15 +95,23 @@ main {
   border: 1px solid var(--clr-light-grey);
 }
 
-.arrow-icon {
+.arrow-button {
+  background: url("./assets/images/icon-arrow.svg") no-repeat center;
+  background-size: 26px;
   position: absolute;
+  cursor: pointer;
+  background-color: var(--clr-purple);
   left: 0;
   right: 0;
   margin: auto;
-  background-color: var(--clr-purple);
   border-radius: 50em;
-  padding: 18px;
+  border: none;
   width: 60px;
+  height: 60px;
+}
+
+.arrow-button:is(:hover, :focus) {
+  background-color: black;
 }
 
 .results-container span {
