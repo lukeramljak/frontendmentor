@@ -84,19 +84,22 @@ main {
 
 .divider-area {
   width: 100%;
+  display: flex;
+  align-items: center;
   position: relative;
-  display: grid;
   margin: 1.5rem auto;
 }
 
 .divider {
-  height: 2px;
-  background-color: var(--clr-light-grey);
+  width: 100%;
+  border: 1px solid var(--clr-light-grey);
 }
 
 .arrow-icon {
   position: absolute;
-  place-self: center;
+  left: 0;
+  right: 0;
+  margin: auto;
   background-color: var(--clr-purple);
   border-radius: 50em;
   padding: 18px;
