@@ -95,9 +95,7 @@ form {
   border: 1px solid var(--clr-light-grey);
 }
 
-.arrow-button {
-  background: url("./assets/images/icon-arrow.svg") no-repeat center;
-  background-size: 26px;
+input[type="image"] {
   position: absolute;
   cursor: pointer;
   background-color: var(--clr-purple);
@@ -105,12 +103,10 @@ form {
   right: 0;
   margin: auto;
   border-radius: 50em;
-  border: none;
-  width: 60px;
-  height: 60px;
+  padding: 18px;
 }
 
-.arrow-button:is(:hover, :focus) {
+input[type="image"]:hover {
   background-color: black;
 }
 
