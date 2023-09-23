@@ -5,7 +5,7 @@
   --clr-off-white: hsl(0, 0%, 94%);
   --clr-light-grey: hsl(0, 0%, 86%);
   --clr-smokey-grey: hsl(0, 1%, 44%);
-  --clr-off-block: hsl(0, 0%, 8%);
+  --clr-off-black: hsl(0, 0%, 8%);
 }
 
 *,
@@ -26,6 +26,7 @@ button {
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--clr-off-white);
+  color: var(--clr-off-black);
   height: 100dvh;
   display: grid;
   place-content: center;
@@ -49,9 +50,13 @@ form {
   gap: 1rem;
 }
 
+.input-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .input-item label {
-  display: block;
-  margin-bottom: 6px;
   color: var(--clr-smokey-grey);
   font-size: 0.75rem;
   font-weight: 700;
@@ -69,6 +74,20 @@ form {
 
 .input-item input:focus {
   outline: 1px solid var(--clr-purple);
+}
+
+.label-error {
+  color: var(--clr-red);
+}
+
+.input-error {
+  outline: 1px solid var(--clr-red);
+}
+
+.error-message {
+  color: var(--clr-red);
+  font-size: 0.6rem;
+  font-style: italic;
 }
 
 .divider-area {
@@ -96,12 +115,12 @@ input[type="image"] {
 }
 
 input[type="image"]:hover {
-  background-color: black;
+  background-color: var(--clr-off-black);
   transition: all 0.3s ease;
 }
 
 input[type="image"]:active {
-  background-color: black;
+  background-color: var(--clr-off-black);
 }
 
 .results-container span {
