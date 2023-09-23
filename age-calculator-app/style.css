@@ -70,9 +70,36 @@ html {
 }
 
 body {
-  height: 100dvh;
   font-family: "Poppins", sans-serif;
+  background-color: var(--clr-off-white);
+  height: 100dvh;
 
   display: grid;
   place-content: center;
+}
+
+main {
+  background-color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 3rem;
+  gap: 2rem;
+  border-radius: 20px 20px 100px 20px;
+}
+
+.arrow-icon {
+  max-width: 100%;
+  background-color: var(--clr-purple);
+  border-radius: 50em;
+  padding: 18px;
+  width: 60px;
+}
+
+.results-container span {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 3.5rem;
+  line-height: 0.9;
+  letter-spacing: -3px;
 }
