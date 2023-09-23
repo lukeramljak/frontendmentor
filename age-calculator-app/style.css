@@ -82,8 +82,21 @@ main {
   outline: 1px solid var(--clr-purple);
 }
 
+.divider-area {
+  width: 100%;
+  position: relative;
+  display: grid;
+  margin: 1.5rem auto;
+}
+
+.divider {
+  height: 2px;
+  background-color: var(--clr-light-grey);
+}
+
 .arrow-icon {
-  max-width: 100%;
+  position: absolute;
+  place-self: center;
   background-color: var(--clr-purple);
   border-radius: 50em;
   padding: 18px;
