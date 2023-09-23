@@ -61,9 +61,7 @@
 }
 
 input,
-button,
-textarea,
-select {
+button {
   font: inherit;
 }
 
