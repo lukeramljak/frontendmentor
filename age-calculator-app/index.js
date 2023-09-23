@@ -1,15 +1,16 @@
-const dayInput = document.getElementById("day");
-const monthInput = document.getElementById("month");
-const yearInput = document.getElementById("year");
-const submitButton = document.getElementById("submit");
-
 const dayLabel = document.querySelector('[for="day"]');
-const monthLabel = document.querySelector('[for="month"]');
-const yearLabel = document.querySelector('[for="year"]');
-
+const dayInput = document.getElementById("day");
 const dayError = document.getElementById("day-error");
+
+const monthLabel = document.querySelector('[for="month"]');
+const monthInput = document.getElementById("month");
 const monthError = document.getElementById("month-error");
+
+const yearLabel = document.querySelector('[for="year"]');
+const yearInput = document.getElementById("year");
 const yearError = document.getElementById("year-error");
+
+const submitButton = document.getElementById("submit");
 
 const date = new Date();
 
