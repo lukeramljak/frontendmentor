@@ -58,6 +58,6 @@ main {
   font-weight: 800;
   font-style: italic;
   font-size: 3.5rem;
-  line-height: 0.9;
-  letter-spacing: -3px;
+  line-height: 1;
+  letter-spacing: -1px;
 }
