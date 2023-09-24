@@ -1,15 +1,6 @@
-const dayLabel = document.querySelector('[for="day"]');
 const dayInput = document.getElementById("day");
-const dayError = document.getElementById("day-error");
-
-const monthLabel = document.querySelector('[for="month"]');
 const monthInput = document.getElementById("month");
-const monthError = document.getElementById("month-error");
-
-const yearLabel = document.querySelector('[for="year"]');
 const yearInput = document.getElementById("year");
-const yearError = document.getElementById("year-error");
-
 const submitButton = document.getElementById("submit");
 
 const date = new Date();
@@ -19,6 +10,13 @@ submitButton.addEventListener("click", () => {
 });
 
 function checkForEmptyFields() {
+  const dayLabel = document.querySelector('[for="day"]');
+  const monthLabel = document.querySelector('[for="month"]');
+  const monthError = document.getElementById("month-error");
+  const yearLabel = document.querySelector('[for="year"]');
+  const dayError = document.getElementById("day-error");
+  const yearError = document.getElementById("year-error");
+
   if (dayInput.value == "" || dayInput.value == "0") {
     dayLabel.classList.add("label-error");
     dayInput.classList.add("input-error");
