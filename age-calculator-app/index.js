@@ -4,52 +4,56 @@ submitButton.addEventListener("click", () => {
   validateFields();
 });
 
-function checkForEmpty() {
-  const inputFields = document.querySelectorAll(".input-item input");
+function addErrorToInput(inputElement, inputLabel, errorMessage) {
+  const labelElement = document.querySelector(`[for="${inputLabel}"]`);
+  const errorSpan = document.createElement("span");
+  const existingError =
+    inputElement.parentElement.querySelector(".error-message");
 
-  inputFields.forEach((field) => {
-    if (field.value === "") {
-      addErrors(field, "This field is required");
-    } else {
-      removeErrors(field);
-    }
-  });
-}
-
-function addErrors(field, error) {
-  const label = field.parentElement.querySelector(".input-label");
-  const errorMessage = document.createElement("span");
-  const existingError = field.parentElement.querySelector(".error-message");
-
-  errorMessage.classList.add("error-message");
-  errorMessage.textContent = error;
-
-  label.classList.add("error-label");
-  field.classList.add("error-input");
   if (!existingError) {
-    field.insertAdjacentElement("afterend", errorMessage);
+    labelElement.classList.add("error-label");
+    inputElement.classList.add("error-input");
+
+    errorSpan.classList.add("error-message");
+    errorSpan.textContent = errorMessage;
+    inputElement.insertAdjacentElement("afterend", errorSpan);
   }
 }
 
-function removeErrors(field) {
-  const label = field.parentElement.querySelector(".input-label");
-  const existingError = field.parentElement.querySelector(".error-message");
+function removeErrorFromInput(inputElement, inputLabel) {
+  const labelElement = document.querySelector(`[for="${inputLabel}"]`);
+  const existingError =
+    inputElement.parentElement.querySelector(".error-message");
 
-  label.classList.remove("error-label");
-  field.classList.remove("error-input");
   if (existingError) {
+    labelElement.classList.remove("error-label");
+    inputElement.classList.remove("error-input");
     existingError.remove();
   }
 }
 
-function validateDateField() {
-  const day = parseInt(document.getElementById("day").value);
-  if (day < 1 || day > 31) {
-    console.log("works");
-  }
+function checkInputsForEmpty() {
+  const inputElements = document.querySelectorAll(".input-item input");
+
+  inputElements.forEach((inputElement) => {
+    const labelName = inputElement.name;
+
+    if (inputElement.value === "") {
+      addErrorToInput(inputElement, labelName, "This field is required");
+    } else {
+      removeErrorFromInput(inputElement, labelName);
+    }
+  });
 }
 
+// function validateDateField() {
+//   const day = parseInt(document.getElementById("day").value);
+//   if (day < 1 || day > 31) {
+//     addErrorToInput(day, "Must be a valid day");
+//   }
+// }
+
 function validateFields() {
-  checkForEmpty();
-  validateDateField();
+  checkInputsForEmpty();
+  // validateDateField();
 }
