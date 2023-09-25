@@ -46,7 +46,7 @@ function checkInputsForEmpty() {
   });
 }
 
-function validateDateField() {
+function validateDateInput() {
   const dayElement = document.getElementById("day");
   const dayToNum = parseInt(day.value);
   if (dayToNum < 1 || dayToNum > 31) {
@@ -54,7 +54,16 @@ function validateDateField() {
   }
 }
 
+function validateMonthInput() {
+  const monthElement = document.getElementById("month");
+  const monthToNum = parseInt(month.value);
+  if (monthToNum < 1 || monthToNum > 12) {
+    addErrorToInput(monthElement, month.id, "Must be a valid month");
+  }
+}
+
 function validateFields() {
   checkInputsForEmpty();
-  validateDateField();
+  validateDateInput();
+  validateMonthInput();
 }
