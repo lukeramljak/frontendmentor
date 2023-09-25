@@ -1,9 +1,3 @@
-const submitButton = document.getElementById("submit");
-
-submitButton.addEventListener("click", () => {
-  validateFields();
-});
-
 function addErrorToInput(inputElement, inputLabel, errorMessage) {
   const labelElement = document.querySelector(`[for="${inputLabel}"]`);
   const errorSpan = document.createElement("span");
@@ -46,20 +40,24 @@ function checkInputsForEmpty() {
   });
 }
 
-function validateDateInput() {
-  const dayElement = document.getElementById("day");
-  const dayToNum = parseInt(day.value);
-  if (dayToNum < 1 || dayToNum > 31) {
-    addErrorToInput(dayElement, day.id, "Must be a valid day");
+function validateInput(inputElement, minValue, maxValue, errorMessage) {
+  const inputToNum = parseInt(inputElement.value);
+  if (inputToNum < minValue || inputToNum > maxValue) {
+    addErrorToInput(inputElement, inputElement.id, errorMessage);
   }
 }
 
+function validateDateInput() {
+  validateInput(document.getElementById("day"), 1, 31, "Must be a valid day");
+}
+
 function validateMonthInput() {
-  const monthElement = document.getElementById("month");
-  const monthToNum = parseInt(month.value);
-  if (monthToNum < 1 || monthToNum > 12) {
-    addErrorToInput(monthElement, month.id, "Must be a valid month");
-  }
+  validateInput(
+    document.getElementById("month"),
+    1,
+    12,
+    "Must be a valid month"
+  );
 }
 
 function validateYearInput() {
@@ -77,3 +75,15 @@ function validateFields() {
   validateMonthInput();
   validateYearInput();
 }
+
+const submitButton = document.getElementById("submit");
+
+submitButton.addEventListener("click", () => {
+  validateFields();
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.code === "Enter") {
+    validateFields();
+  }
+});
