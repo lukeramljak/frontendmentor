@@ -62,8 +62,18 @@ function validateMonthInput() {
   }
 }
 
+function validateYearInput() {
+  const yearElement = document.getElementById("year");
+  const yearToNum = parseInt(year.value);
+  const currentDate = new Date();
+  if (yearToNum > currentDate.getFullYear()) {
+    addErrorToInput(yearElement, year.id, "Must be in the past");
+  }
+}
+
 function validateFields() {
   checkInputsForEmpty();
   validateDateInput();
   validateMonthInput();
+  validateYearInput();
 }
