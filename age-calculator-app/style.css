@@ -140,7 +140,7 @@ input[type="image"]:active {
 
 @media (width >= 768px) {
   main {
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 5fr 1fr;
     padding: 3rem 2rem;
   }
   form,
