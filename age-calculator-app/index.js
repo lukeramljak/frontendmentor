@@ -1,12 +1,11 @@
 const submitButton = document.getElementById("submit");
 
-submitButton.addEventListener("click", (event) => {
-  event.preventDefault();
+submitButton.addEventListener("click", () => {
   validateFields();
 });
 
 function validateFields() {
-  const inputFields = document.querySelectorAll(".input-field");
+  const inputFields = document.querySelectorAll(".input-item input");
 
   inputFields.forEach((field) => {
     const label = field.parentElement.querySelector(".input-label");
