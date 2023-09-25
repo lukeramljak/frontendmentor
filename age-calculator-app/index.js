@@ -121,13 +121,19 @@ function calculateDifference() {
     monthDiff += 12;
   }
 
+  if (!isNaN(yearDiff, monthDiff, dayDiff)) {
+    printValues(yearDiff, monthDiff, dayDiff);
+  }
+}
+
+function printValues(year, month, day) {
   const yearElement = document.getElementById("result-year");
   const monthElement = document.getElementById("result-month");
   const dayElement = document.getElementById("result-day");
 
-  yearElement.textContent = yearDiff;
-  monthElement.textContent = monthDiff;
-  dayElement.textContent = dayDiff;
+  yearElement.textContent = year;
+  monthElement.textContent = month;
+  dayElement.textContent = day;
 }
 
 const submitButton = document.getElementById("submit");
