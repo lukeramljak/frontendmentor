@@ -95,14 +95,51 @@ function validateFields() {
   validateYearInput();
 }
 
+function calculateDifference() {
+  const yearValue = parseInt(document.getElementById("year").value);
+  const monthValue = parseInt(document.getElementById("month").value) - 1;
+  const dayValue = parseInt(document.getElementById("day").value);
+
+  const currentDate = new Date();
+  const enteredDate = new Date(yearValue, monthValue, dayValue);
+
+  let yearDiff = currentDate.getFullYear() - enteredDate.getFullYear();
+  let monthDiff = currentDate.getMonth() - enteredDate.getMonth();
+  let dayDiff = currentDate.getDate() - enteredDate.getDate();
+
+  if (dayDiff < 0) {
+    monthDiff--;
+    dayDiff += new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      0
+    ).getDate();
+  }
+
+  if (monthDiff < 0) {
+    yearDiff--;
+    monthDiff += 12;
+  }
+
+  const yearElement = document.getElementById("result-year");
+  const monthElement = document.getElementById("result-month");
+  const dayElement = document.getElementById("result-day");
+
+  yearElement.textContent = yearDiff;
+  monthElement.textContent = monthDiff;
+  dayElement.textContent = dayDiff;
+}
+
 const submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", () => {
   validateFields();
+  calculateDifference();
 });
 
 const inputContainerElement = document.querySelector(".input-container");
 inputContainerElement.addEventListener("keydown", (event) => {
   if (event.code === "Enter") {
     validateFields();
+    calculateDifference();
   }
 });
