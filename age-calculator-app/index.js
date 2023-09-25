@@ -46,14 +46,15 @@ function checkInputsForEmpty() {
   });
 }
 
-// function validateDateField() {
-//   const day = parseInt(document.getElementById("day").value);
-//   if (day < 1 || day > 31) {
-//     addErrorToInput(day, "Must be a valid day");
-//   }
-// }
+function validateDateField() {
+  const dayElement = document.getElementById("day");
+  const dayToNum = parseInt(day.value);
+  if (dayToNum < 1 || dayToNum > 31) {
+    addErrorToInput(dayElement, day.id, "Must be a valid day");
+  }
+}
 
 function validateFields() {
   checkInputsForEmpty();
-  // validateDateField();
+  validateDateField();
 }
