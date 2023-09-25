@@ -1,49 +1,33 @@
-const dayInput = document.getElementById("day");
-const monthInput = document.getElementById("month");
-const yearInput = document.getElementById("year");
 const submitButton = document.getElementById("submit");
 
-const date = new Date();
-
-submitButton.addEventListener("click", () => {
-  checkForEmptyFields();
+submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  validateFields();
 });
 
-function checkForEmptyFields() {
-  const dayLabel = document.querySelector('[for="day"]');
-  const monthLabel = document.querySelector('[for="month"]');
-  const monthError = document.getElementById("month-error");
-  const yearLabel = document.querySelector('[for="year"]');
-  const dayError = document.getElementById("day-error");
-  const yearError = document.getElementById("year-error");
+function validateFields() {
+  const inputFields = document.querySelectorAll(".input-field");
 
-  if (dayInput.value == "" || dayInput.value == "0") {
-    dayLabel.classList.add("label-error");
-    dayInput.classList.add("input-error");
-    dayError.style.display = "block";
-  } else {
-    dayLabel.classList.remove("label-error");
-    dayInput.classList.remove("input-error");
-    dayError.style.display = "none";
-  }
+  inputFields.forEach((field) => {
+    const label = field.parentElement.querySelector(".input-label");
+    const errorMessage = document.createElement("span");
+    const existingError = field.parentElement.querySelector(".error-message");
 
-  if (monthInput.value == "" || monthInput.value == "0") {
-    monthLabel.classList.add("label-error");
-    monthInput.classList.add("input-error");
-    monthError.style.display = "block";
-  } else {
-    monthLabel.classList.remove("label-error");
-    monthInput.classList.remove("input-error");
-    monthError.style.display = "none";
-  }
+    errorMessage.classList.add("error-message");
+    errorMessage.textContent = "This field is required";
 
-  if (yearInput.value == "" || yearInput.value == "0") {
-    yearLabel.classList.add("label-error");
-    yearInput.classList.add("input-error");
-    yearError.style.display = "block";
-  } else {
-    yearLabel.classList.remove("label-error");
-    yearInput.classList.remove("input-error");
-    yearError.style.display = "none";
-  }
+    if (field.value === "" || field.value === "0") {
+      label.classList.add("error-label");
+      field.classList.add("error-input");
+      if (!existingError) {
+        field.insertAdjacentElement("afterend", errorMessage);
+      }
+    } else {
+      label.classList.remove("error-label");
+      field.classList.remove("error-input");
+      if (existingError) {
+        existingError.remove();
+      }
+    }
+  });
 }

@@ -76,21 +76,15 @@ form {
   outline: 1px solid var(--clr-purple);
 }
 
-.input-item > span {
-  display: none;
-}
-
-.label-error {
+.error-label {
   color: var(--clr-red);
 }
 
-.input-error {
+.error-input {
   outline: 1px solid var(--clr-red);
 }
 
-#day-error,
-#month-error,
-#year-error {
+.error-message {
   color: var(--clr-red);
   font-size: 0.6rem;
   font-style: italic;
