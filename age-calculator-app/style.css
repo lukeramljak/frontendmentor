@@ -36,7 +36,7 @@ main {
   background-color: var(--clr-white);
   display: grid;
   padding: 3rem 1.5rem;
-  gap: 2rem;
+  gap: 2.5rem;
   border-radius: 20px 20px 100px 20px;
 }
 
