@@ -51,13 +51,32 @@ function validateDateInput() {
   validateInput(document.getElementById("day"), 1, 31, "Must be a valid day");
 }
 
+function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
 function validateMonthInput() {
+  const dayValue = parseInt(document.getElementById("day").value);
+  const monthValue = parseInt(document.getElementById("month").value);
+  const yearValue = parseInt(document.getElementById("year").value);
+
   validateInput(
     document.getElementById("month"),
     1,
     12,
     "Must be a valid month"
   );
+
+  const monthsWith31Days = [1, 3, 5, 7, 8, 10, 12];
+
+  if (monthValue === 2) {
+    const maxDays = isLeapYear(yearValue) ? 29 : 28;
+    if (dayValue > maxDays) {
+      addErrorToInput(document.getElementById("day"), "day", "Invalid date");
+    }
+  } else if (monthsWith31Days.includes(monthValue) && dayValue === 31) {
+    addErrorToInput(document.getElementById("day"), "day", "Invalid date");
+  }
 }
 
 function validateYearInput() {
@@ -65,7 +84,7 @@ function validateYearInput() {
   const yearToNum = parseInt(year.value);
   const currentDate = new Date();
   if (yearToNum > currentDate.getFullYear()) {
-    addErrorToInput(yearElement, year.id, "Must be in the past");
+    addErrorToInput(yearElement, "year", "Must be in the past");
   }
 }
 
