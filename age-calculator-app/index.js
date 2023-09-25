@@ -77,12 +77,12 @@ function validateFields() {
 }
 
 const submitButton = document.getElementById("submit");
-
 submitButton.addEventListener("click", () => {
   validateFields();
 });
 
-window.addEventListener("keydown", (event) => {
+const inputContainerElement = document.querySelector(".input-container");
+inputContainerElement.addEventListener("keydown", (event) => {
   if (event.code === "Enter") {
     validateFields();
   }
