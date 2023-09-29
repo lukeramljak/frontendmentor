@@ -6,7 +6,6 @@ function setMaxYearOnLoad() {
 
 function validateForm(e) {
   const form = e.target;
-  const elements = Array.from(form.elements);
 
   if (form.checkValidity()) {
     e.preventDefault();
