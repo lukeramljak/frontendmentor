@@ -20,58 +20,78 @@
   </head>
   <body>
     <main>
-      <div class="input-container">
+      <form id="form">
         <div class="input-item">
           <label for="day" class="input-label">Day</label>
           <input
             id="day"
-            type="tel"
+            type="number"
             name="day"
             placeholder="DD"
-            autocomplete="off" />
+            autocomplete="off"
+            min="1"
+            max="31"
+            required 
+            />
+            <p class="error required">This field is required</p>
+            <p class="error day">Must be a valid day</p>
+            <p class="error date">Must be a valid date</p>
         </div>
         <div class="input-item">
           <label for="month" class="input-label">Month</label>
           <input
             id="month"
-            type="tel"
+            type="number"
             name="month"
             placeholder="MM"
-            autocomplete="off" />
+            autocomplete="off"
+            min="1"
+            max="12"
+            required 
+            />
+            <p class="error required">This field is required</p>
+            <p class="error month">Must be a valid month</p>
         </div>
         <div class="input-item">
           <label for="year" class="input-label">Year</label>
           <input
             id="year"
-            type="tel"
+            type="number"
             name="year"
             placeholder="YYYY"
-            autocomplete="off" />
+            autocomplete="off"
+            max=""
+            required 
+            />
+            <p class="error required">This field is required</p>
+            <p class="error year">Must be in the past</p>
         </div>
-      </div>
+      </form>
 
       <div class="divider-area">
         <input
           type="image"
           alt="submit"
           id="submit"
+          form="form"
           src="./assets/images/icon-arrow.svg"
           width="60"
-          height="60" />
+          height="60" 
+          />
         <div class="divider"></div>
       </div>
 
       <div class="results-container">
         <div>
-          <span class="result-number" id="result-year">--</span>
+          <span class="result-number" id="result-year">- -</span>
           <span>years</span>
         </div>
         <div>
-          <span class="result-number" id="result-month">--</span>
+          <span class="result-number" id="result-month">- -</span>
           <span>months</span>
         </div>
         <div>
-          <span class="result-number" id="result-day">--</span>
+          <span class="result-number" id="result-day">- -</span>
           <span>days</span>
         </div>
       </div>

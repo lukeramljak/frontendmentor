@@ -1,98 +1,45 @@
-function addErrorToInput(inputElement, inputLabel, errorMessage) {
-  const labelElement = document.querySelector(`[for="${inputLabel}"]`);
-  const errorSpan = document.createElement("span");
-  const existingError =
-    inputElement.parentElement.querySelector(".error-message");
+const form = document.querySelector("form");
+form.noValidate = true;
 
-  if (!existingError) {
-    labelElement.classList.add("error-label");
-    inputElement.classList.add("error-input");
+window.addEventListener("load", setMaxYearOnLoad);
+form.addEventListener("submit", validateForm);
 
-    errorSpan.classList.add("error-message");
-    errorSpan.textContent = errorMessage;
-    inputElement.insertAdjacentElement("afterend", errorSpan);
+function setMaxYearOnLoad() {
+  const yearInput = document.getElementById("year");
+  const currentYear = new Date().getFullYear();
+  yearInput.setAttribute("max", currentYear);
+}
+
+function validateForm(e) {
+  const form = e.target;
+
+  if (form.checkValidity()) {
+    e.preventDefault();
+    calculateDifference();
+  } else {
+    e.preventDefault();
+    Array.from(form.elements).forEach((i) => {
+      if (i.checkValidity()) {
+        i.parentElement.classList.remove("empty");
+        i.parentElement.classList.remove("overflow");
+        i.parentElement.classList.remove("invalid");
+      } else if (i.validity.valueMissing) {
+        i.parentElement.classList.add("empty");
+      } else if (i.validity.rangeOverflow) {
+        i.parentElement.classList.add("overflow");
+        i.parentElement.classList.remove("empty");
+        i.parentElement.classList.remove("invalid");
+      }
+    });
   }
-}
-
-function removeErrorFromInput(inputElement, inputLabel) {
-  const labelElement = document.querySelector(`[for="${inputLabel}"]`);
-  const existingError =
-    inputElement.parentElement.querySelector(".error-message");
-
-  if (existingError) {
-    labelElement.classList.remove("error-label");
-    inputElement.classList.remove("error-input");
-    existingError.remove();
+  if (!validateMonthInput()) {
+    e.preventDefault();
+    Array.from(form.elements).forEach((i) => {
+      i.parentElement.classList.add("invalid");
+      i.parentElement.classList.remove("empty");
+      i.parentElement.classList.remove("overflow");
+    });
   }
-}
-
-function checkInputsForEmpty() {
-  const inputElements = document.querySelectorAll(".input-item input");
-
-  inputElements.forEach((inputElement) => {
-    const labelName = inputElement.name;
-
-    if (inputElement.value === "") {
-      addErrorToInput(inputElement, labelName, "This field is required");
-    } else {
-      removeErrorFromInput(inputElement, labelName);
-    }
-  });
-}
-
-function validateInput(inputElement, minValue, maxValue, errorMessage) {
-  const inputToNum = parseInt(inputElement.value);
-  if (inputToNum < minValue || inputToNum > maxValue) {
-    addErrorToInput(inputElement, inputElement.id, errorMessage);
-  }
-}
-
-function validateDateInput() {
-  validateInput(document.getElementById("day"), 1, 31, "Must be a valid day");
-}
-
-function isLeapYear(year) {
-  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-}
-
-function validateMonthInput() {
-  const dayValue = parseInt(document.getElementById("day").value);
-  const monthValue = parseInt(document.getElementById("month").value);
-  const yearValue = parseInt(document.getElementById("year").value);
-
-  validateInput(
-    document.getElementById("month"),
-    1,
-    12,
-    "Must be a valid month"
-  );
-
-  const monthsWith31Days = [1, 3, 5, 7, 8, 10, 12];
-
-  if (monthValue === 2) {
-    const maxDays = isLeapYear(yearValue) ? 29 : 28;
-    if (dayValue > maxDays) {
-      addErrorToInput(document.getElementById("day"), "day", "Invalid date");
-    }
-  } else if (monthsWith31Days.includes(monthValue) && dayValue === 31) {
-    addErrorToInput(document.getElementById("day"), "day", "Invalid date");
-  }
-}
-
-function validateYearInput() {
-  const yearElement = document.getElementById("year");
-  const yearToNum = parseInt(year.value);
-  const currentDate = new Date();
-  if (yearToNum > currentDate.getFullYear()) {
-    addErrorToInput(yearElement, "year", "Must be in the past");
-  }
-}
-
-function validateFields() {
-  checkInputsForEmpty();
-  validateDateInput();
-  validateMonthInput();
-  validateYearInput();
 }
 
 function calculateDifference() {
@@ -136,16 +83,25 @@ function printValues(year, month, day) {
   dayElement.textContent = day;
 }
 
-const submitButton = document.getElementById("submit");
-submitButton.addEventListener("click", () => {
-  validateFields();
-  calculateDifference();
-});
+function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
 
-const inputContainerElement = document.querySelector(".input-container");
-inputContainerElement.addEventListener("keydown", (event) => {
-  if (event.code === "Enter") {
-    validateFields();
-    calculateDifference();
+function validateMonthInput() {
+  const dayValue = parseInt(document.getElementById("day").value);
+  const monthValue = parseInt(document.getElementById("month").value);
+  const yearValue = parseInt(document.getElementById("year").value);
+
+  const monthsWith30Days = [4, 6, 9, 11];
+
+  if (monthValue === 2) {
+    const maxDays = isLeapYear(yearValue) ? 29 : 28;
+    if (dayValue > maxDays) {
+      return false;
+    }
+  } else if (monthsWith30Days.includes(monthValue) && dayValue === 31) {
+    return false;
   }
-});
+
+  return true;
+}

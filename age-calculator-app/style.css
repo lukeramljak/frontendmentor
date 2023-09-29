@@ -35,7 +35,7 @@ body {
 main {
   background-color: var(--clr-white);
   display: grid;
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.75rem;
   gap: 2.5rem;
   border-radius: 20px 20px 100px 20px;
 }
@@ -45,16 +45,17 @@ main {
   color: var(--clr-white);
 }
 
-.input-container {
+form {
   display: flex;
   gap: 1rem;
+  width: 100%;
 }
 
 .input-item {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  position: relative;
+  width: 90px;
 }
 
 .input-label {
@@ -66,31 +67,54 @@ main {
 }
 
 .input-item input {
-  max-width: 92px;
   font-size: 1.125rem;
-  padding: 12px;
+  padding: 10px 12px;
   border: 1px solid var(--clr-light-grey);
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .input-item input:focus {
   outline: 1px solid var(--clr-purple);
 }
 
-.error-label {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error {
+  color: var(--clr-red);
+  font-size: 0.45rem;
+  font-style: italic;
+}
+
+.required,
+.day,
+.date,
+.month,
+.year {
+  display: none;
+}
+
+.empty label,
+.overflow label,
+.invalid label {
   color: var(--clr-red);
 }
 
-.error-input {
+.empty input,
+.overflow input,
+.invalid input {
   outline: 1px solid var(--clr-red);
 }
 
-.error-message {
-  color: var(--clr-red);
-  font-size: 0.5rem;
-  font-style: italic;
-  position: absolute;
-  bottom: -1.25rem;
+.empty .required,
+.overflow .day,
+.overflow .month,
+.overflow .year,
+.invalid .date {
+  display: block;
 }
 
 .divider-area {
@@ -98,7 +122,7 @@ main {
   display: flex;
   align-items: center;
   position: relative;
-  margin: 1.5rem auto;
+  margin: 1.25rem auto;
 }
 
 .divider {
@@ -126,6 +150,10 @@ input[type="image"]:active {
   background-color: var(--clr-off-black);
 }
 
+.results-container {
+  min-width: 300px;
+}
+
 .results-container span {
   font-weight: 800;
   font-style: italic;
@@ -136,31 +164,36 @@ input[type="image"]:active {
 
 .result-number {
   color: var(--clr-purple);
+  margin-right: 4px;
 }
 
 @media (width >= 768px) {
   main {
-    grid-template-columns: 5fr 1fr;
-    padding: 3rem 2rem;
+    grid-template-columns: 4fr 1fr;
+    padding: 2.5rem 3rem;
   }
-  form,
   .divider-area {
     grid-column: span 2;
   }
   .divider-area {
     margin: 0;
   }
+  .input-item {
+    width: 120px;
+  }
   .input-item input {
-    font-size: 1.5rem;
-    max-width: 140px;
+    font-size: 1.25rem;
   }
   input[type="image"] {
     margin-right: 0;
   }
-  .error-message {
+  .error {
     font-size: 0.6rem;
   }
+  .results-container {
+    min-width: 345px;
+  }
   .results-container span {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
