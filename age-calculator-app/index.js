@@ -76,9 +76,23 @@ function printValues(year, month, day) {
   const monthElement = document.getElementById("result-month");
   const dayElement = document.getElementById("result-day");
 
-  yearElement.textContent = year;
-  monthElement.textContent = month;
-  dayElement.textContent = day;
+  animateResult(year, yearElement);
+  animateResult(month, monthElement);
+  animateResult(day, dayElement);
+}
+
+function animateResult(input, output) {
+  let interval = 600;
+  let startValue = 0;
+  let endValue = input;
+  let duration = Math.floor(interval / endValue);
+  let counter = setInterval(() => {
+    startValue += 1;
+    output.textContent = startValue;
+    if (startValue === endValue) {
+      clearInterval(counter);
+    }
+  }, duration);
 }
 
 function isLeapYear(year) {
