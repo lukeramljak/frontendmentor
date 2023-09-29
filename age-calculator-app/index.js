@@ -1,9 +1,3 @@
-const form = document.querySelector("form");
-form.noValidate = true;
-
-window.addEventListener("load", setMaxYearOnLoad);
-form.addEventListener("submit", validateForm);
-
 function setMaxYearOnLoad() {
   const yearInput = document.getElementById("year");
   const currentYear = new Date().getFullYear();
@@ -12,32 +6,37 @@ function setMaxYearOnLoad() {
 
 function validateForm(e) {
   const form = e.target;
+  const elements = Array.from(form.elements);
 
   if (form.checkValidity()) {
     e.preventDefault();
-    calculateDifference();
+    if (validateMonthInput()) {
+      calculateDifference();
+      Array.from(form.elements).forEach((i) => {
+        i.parentElement.classList.remove("empty", "overflow", "invalid");
+      });
+    }
   } else {
     e.preventDefault();
+
     Array.from(form.elements).forEach((i) => {
       if (i.checkValidity()) {
-        i.parentElement.classList.remove("empty");
-        i.parentElement.classList.remove("overflow");
-        i.parentElement.classList.remove("invalid");
+        i.parentElement.classList.remove("empty", "overflow", "invalid");
       } else if (i.validity.valueMissing) {
         i.parentElement.classList.add("empty");
       } else if (i.validity.rangeOverflow) {
         i.parentElement.classList.add("overflow");
-        i.parentElement.classList.remove("empty");
-        i.parentElement.classList.remove("invalid");
+        i.parentElement.classList.remove("empty", "invalid");
       }
     });
   }
+
   if (!validateMonthInput()) {
     e.preventDefault();
+
     Array.from(form.elements).forEach((i) => {
       i.parentElement.classList.add("invalid");
-      i.parentElement.classList.remove("empty");
-      i.parentElement.classList.remove("overflow");
+      i.parentElement.classList.remove("empty", "overflow");
     });
   }
 }
@@ -105,3 +104,9 @@ function validateMonthInput() {
 
   return true;
 }
+
+const form = document.querySelector("form");
+form.noValidate = true;
+
+window.addEventListener("load", setMaxYearOnLoad);
+form.addEventListener("submit", validateForm);
