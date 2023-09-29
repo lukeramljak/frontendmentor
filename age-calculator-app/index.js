@@ -89,7 +89,9 @@ function animateResult(input, output) {
   let counter = setInterval(() => {
     startValue += 1;
     output.textContent = startValue;
-    if (startValue === endValue) {
+    if (startValue == endValue) {
+      clearInterval(counter);
+    } else if (endValue == 0) {
       clearInterval(counter);
     }
   }, duration);
