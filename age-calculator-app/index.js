@@ -7,35 +7,34 @@ function setMaxYearOnLoad() {
 function validateForm(e) {
   const form = e.target;
 
-  if (form.checkValidity()) {
-    e.preventDefault();
-    if (validateMonthInput()) {
-      calculateDifference();
-      Array.from(form.elements).forEach((i) => {
-        i.parentElement.classList.remove("empty", "overflow", "invalid");
-      });
-    }
-  } else {
-    e.preventDefault();
+  function updateClassList(element, addClass, removeClass) {
+    const classList = element.parentElement.classList;
 
-    Array.from(form.elements).forEach((i) => {
-      if (i.checkValidity()) {
-        i.parentElement.classList.remove("empty", "overflow", "invalid");
-      } else if (i.validity.valueMissing) {
-        i.parentElement.classList.add("empty");
-      } else if (i.validity.rangeOverflow) {
-        i.parentElement.classList.add("overflow");
-        i.parentElement.classList.remove("empty", "invalid");
-      }
-    });
+    classList.add(...addClass);
+    classList.remove(...removeClass);
   }
 
   if (!validateMonthInput()) {
     e.preventDefault();
-
     Array.from(form.elements).forEach((i) => {
-      i.parentElement.classList.add("invalid");
-      i.parentElement.classList.remove("empty", "overflow");
+      updateClassList(i, ["invalid"], ["empty", "overflow"]);
+    });
+  }
+
+  if (!form.checkValidity()) {
+    e.preventDefault();
+    Array.from(form.elements).forEach((i) => {
+      if (i.validity.valueMissing) {
+        updateClassList(i, ["empty"], []);
+      } else if (i.validity.rangeOverflow) {
+        updateClassList(i, ["overflow"], ["empty", "invalid"]);
+      }
+    });
+  } else if (validateMonthInput()) {
+    e.preventDefault();
+    calculateDifference();
+    Array.from(form.elements).forEach((i) => {
+      updateClassList(i, [], ["empty", "overflow", "invalid"]);
     });
   }
 }
@@ -97,16 +96,16 @@ function animateResult(input, output) {
   }, duration);
 }
 
-function isLeapYear(year) {
-  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-}
-
 function validateMonthInput() {
   const dayValue = parseInt(document.getElementById("day").value);
   const monthValue = parseInt(document.getElementById("month").value);
   const yearValue = parseInt(document.getElementById("year").value);
 
   const monthsWith30Days = [4, 6, 9, 11];
+
+  function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+  }
 
   if (monthValue === 2) {
     const maxDays = isLeapYear(yearValue) ? 29 : 28;
@@ -120,22 +119,8 @@ function validateMonthInput() {
   return true;
 }
 
-function jumpToNextField() {
-  const dayInput = document.getElementById("day");
-  const monthInput = document.getElementById("month");
-  const yearInput = document.getElementById("year");
-
-  if (dayInput.value.length == 2) {
-    monthInput.focus();
-  }
-  if (monthInput.value.length == 2) {
-    yearInput.focus();
-  }
-}
-
 const form = document.querySelector("form");
 form.noValidate = true;
 
 window.addEventListener("load", setMaxYearOnLoad);
-form.addEventListener("input", jumpToNextField);
 form.addEventListener("submit", validateForm);
