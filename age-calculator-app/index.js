@@ -120,8 +120,22 @@ function validateMonthInput() {
   return true;
 }
 
+function jumpToNextField() {
+  const dayInput = document.getElementById("day");
+  const monthInput = document.getElementById("month");
+  const yearInput = document.getElementById("year");
+
+  if (dayInput.value.length == 2) {
+    monthInput.focus();
+  }
+  if (monthInput.value.length == 2) {
+    yearInput.focus();
+  }
+}
+
 const form = document.querySelector("form");
 form.noValidate = true;
 
 window.addEventListener("load", setMaxYearOnLoad);
+form.addEventListener("input", jumpToNextField);
 form.addEventListener("submit", validateForm);
