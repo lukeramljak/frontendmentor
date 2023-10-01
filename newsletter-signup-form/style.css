@@ -95,54 +95,48 @@ li {
 
 li::before {
   content: url("./assets/images/icon-list.svg");
-  width: 1rem;
-  height: 1rem;
-  margin-right: 1.25rem;
+  margin-right: 1rem;
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  position: relative;
 }
 
-.label-container {
-  font-size: 0.75rem;
-  font-weight: var(--fw-bold);
-  display: flex;
-  justify-content: space-between;
-}
-
-.hidden {
-  display: none;
-}
-
-.label-container span {
-  color: var(--tomato);
+.input-container label,
+.input-container .error {
+  font-weight: bold;
 }
 
 input,
 button {
   border: none;
+  outline: none;
   border-radius: 8px;
   padding: 1rem 1.5rem;
 }
 
-input[type="email"] {
+input {
   outline: 1px solid var(--grey);
 }
 
-input[type="email"]:focus {
+input:focus {
   outline: 2px solid var(--slate-grey);
 }
 
-input.invalid,
-input.invalid:focus {
+.invalid input {
   outline: 2px solid var(--tomato);
   background-color: var(--tomato-transparent);
 }
 
-input[type="submit"],
+.error {
+  position: absolute;
+  right: 0;
+  color: var(--tomato);
+}
+
 button {
   cursor: pointer;
   color: var(--white);
@@ -150,8 +144,6 @@ button {
   font-weight: var(--fw-bold);
 }
 
-input[type="submit"]:hover,
-input[type="submit"]:focus,
 button:hover,
 button:focus {
   background: linear-gradient(90deg, var(--tomato) 35%, var(--orange) 100%);

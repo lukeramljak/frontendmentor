@@ -24,7 +24,7 @@
           media="(min-width: 768px)" />
         <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
       </picture>
-      <form>
+      <form id="form">
         <h1>Stay updated!</h1>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
         <ul>
@@ -33,19 +33,16 @@
           <li>And much more!</li>
         </ul>
         <div class="input-container">
-          <div class="label-container">
-            <label for="email">Email address</label>
-            <span class="hidden" id="error-label">Valid email required</span>
-          </div>
+          <label for="email">Email address</label>
+          <div class="error"></div>
           <input
-            type="email"
-            name="email"
             id="email"
+            name="email"
+            type="text"
             placeholder="email@company.com"
-            autocomplete="email"
-            required />
+            autocomplete="email" />
         </div>
-        <input type="submit" value="Subscribe to monthly newsletter" />
+        <button type="submit">Subscribe to monthly newsletter</button>
       </form>
     </article>
     <modal class="success-modal" hidden>
