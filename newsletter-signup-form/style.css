@@ -1,11 +1,13 @@
 :root {
   --tomato: hsl(4, 100%, 67%);
   --slate-grey: hsl(234, 29%, 20%);
-  --charcoal-grey: hsl(231, 7%, 60%);
+  --charcoal-grey: hsl(235, 18%, 26%);
   --grey: hsl(231, 7%, 60%);
   --white: hsl(0, 0%, 100%);
 
-  --font-body: "Roboto", sans-serif;
+  --ff-body: "Roboto", sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
 }
 
 @font-face {
@@ -25,6 +27,10 @@
 *,
 *::before,
 *::after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
 }
 
@@ -33,23 +39,98 @@ button {
   font: inherit;
 }
 
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
 html,
 body {
   height: 100%;
 }
 
-main {
-  display: grid;
-  place-content: center;
-  height: 100dvh;
+body {
+  color: var(--charcoal-grey);
+  font-family: var(--ff-body);
+  line-height: 1.5;
 }
 
-body {
-  background-color: var(--slate-grey);
-  color: var(--slate-grey);
-  font-family: var(--font-body);
+.form-container,
+.success-modal {
+  background-color: var(--white);
 }
 
 .form-container {
-  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 1.1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+li {
+  display: flex;
+  align-items: flex-start;
+}
+
+li::before {
+  content: url("./assets/images/icon-list.svg");
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1.25rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+}
+
+input,
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+
+input[type="email"] {
+  outline: 1px solid var(--grey);
+}
+
+input[type="submit"],
+button {
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--slate-grey);
+  font-weight: var(--fw-bold);
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+button:hover,
+button:focus {
+  background-color: var(--charcoal-grey);
 }
