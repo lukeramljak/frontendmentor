@@ -1,0 +1,55 @@
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(231, 7%, 60%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+
+  --font-body: "Roboto", sans-serif;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  height: 100dvh;
+}
+
+body {
+  background-color: var(--slate-grey);
+  color: var(--slate-grey);
+  font-family: var(--font-body);
+}
+
+.form-container {
+  background-color: var(--white);
+}
