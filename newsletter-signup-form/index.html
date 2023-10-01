@@ -24,7 +24,7 @@
           media="(min-width: 768px)" />
         <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
       </picture>
-      <form id="form">
+      <form id="form" action="/">
         <h1>Stay updated!</h1>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
         <ul>
@@ -39,19 +39,22 @@
             id="email"
             name="email"
             type="text"
+            value="email@email.com"
             placeholder="email@company.com"
             autocomplete="email" />
         </div>
         <button type="submit">Subscribe to monthly newsletter</button>
       </form>
     </article>
-    <modal class="success-modal" hidden>
-      <span>Thanks for subscribing!</span>
+    <article class="success-modal hidden">
+      <img src="./assets/images/icon-success.svg" alt="" />
+      <h2>Thanks for subscribing!</h2>
       <p>
-        A confirmation email has been sent to ash@loremcompany.com. Please open
-        it and click the button inside to confirm your subscription.
+        A confirmation email has been sent to
+        <span id="submitted-email"></span>. Please open it and click the button
+        inside to confirm your subscription.
       </p>
-      <button>Dismiss message</button>
-    </modal>
+      <button id="dismiss">Dismiss message</button>
+    </article>
   </body>
 </html>

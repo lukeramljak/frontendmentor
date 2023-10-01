@@ -1,20 +1,9 @@
-const form = document.getElementById("form");
-const email = document.getElementById("email");
-
 const setError = (element, message) => {
   const inputContainer = element.parentElement;
   const errorDisplay = document.querySelector(".error");
 
   errorDisplay.textContent = message;
   inputContainer.classList.add("invalid");
-};
-
-const setValid = (element) => {
-  const inputContainer = element.parentElement;
-  const errorDisplay = document.querySelector(".error");
-
-  errorDisplay.textContent = "";
-  inputContainer.classList.remove("invalid");
 };
 
 const isValidEmail = (email) => {
@@ -30,12 +19,37 @@ const validateForm = () => {
   } else if (!isValidEmail(emailValue)) {
     setError(email, "Valid email required");
   } else {
-    setValid(email);
+    showModal();
   }
 };
+
+const showModal = () => {
+  const form = document.querySelector(".form-container");
+  const modal = document.querySelector(".success-modal");
+  const email = document.getElementById("email");
+  const userEmail = document.getElementById("submitted-email");
+  form.classList.add("hidden");
+  modal.classList.remove("hidden");
+  userEmail.textContent = email.value;
+};
+
+const resetForm = () => {
+  const form = document.querySelector(".form-container");
+  const modal = document.querySelector(".success-modal");
+  const email = document.getElementById("email");
+  form.classList.remove("hidden");
+  modal.classList.add("hidden");
+  email.value = "";
+};
+
+const form = document.getElementById("form");
+const email = document.getElementById("email");
+const dismissButton = document.getElementById("dismiss");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   validateForm();
 });
+
+dismissButton.addEventListener("click", resetForm);
