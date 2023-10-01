@@ -149,6 +149,7 @@ button {
 button:hover,
 button:focus {
   background: linear-gradient(90deg, var(--tomato) 35%, var(--orange) 100%);
+  box-shadow: 3px 15px 50px -4px rgba(255, 98, 87, 0.5);
 }
 
 .success-modal {
@@ -199,5 +200,9 @@ button:focus {
   }
   .success-modal img {
     margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  .success-modal button {
+    margin-top: 2rem;
   }
 }
