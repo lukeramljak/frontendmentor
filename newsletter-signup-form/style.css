@@ -1,5 +1,7 @@
 :root {
   --tomato: hsl(4, 100%, 67%);
+  --tomato-transparent: hsl(4, 100%, 67%, 0.2);
+  --orange: hsl(22, 94%, 65%);
   --slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
   --grey: hsl(231, 7%, 60%);
@@ -104,9 +106,19 @@ li::before {
   gap: 0.5rem;
 }
 
-label {
+.label-container {
   font-size: 0.75rem;
   font-weight: var(--fw-bold);
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+.label-container span {
+  color: var(--tomato);
 }
 
 input,
@@ -118,6 +130,16 @@ button {
 
 input[type="email"] {
   outline: 1px solid var(--grey);
+}
+
+input[type="email"]:focus {
+  outline: 2px solid var(--slate-grey);
+}
+
+input.invalid,
+input.invalid:focus {
+  outline: 2px solid var(--tomato);
+  background-color: var(--tomato-transparent);
 }
 
 input[type="submit"],
@@ -132,7 +154,7 @@ input[type="submit"]:hover,
 input[type="submit"]:focus,
 button:hover,
 button:focus {
-  background-color: var(--charcoal-grey);
+  background: linear-gradient(90deg, var(--tomato) 35%, var(--orange) 100%);
 }
 
 @media (min-width: 768px) {
