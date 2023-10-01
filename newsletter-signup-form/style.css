@@ -66,7 +66,7 @@ body {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
   line-height: 1.1;
 }
 
@@ -133,4 +133,22 @@ input[type="submit"]:focus,
 button:hover,
 button:focus {
   background-color: var(--charcoal-grey);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: var(--slate-grey);
+    display: grid;
+    place-content: center;
+  }
+  .form-container {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.25rem 1.25rem 1.25rem 2.25rem;
+    border-radius: 2em;
+  }
+  form {
+    max-width: 400px;
+  }
 }
