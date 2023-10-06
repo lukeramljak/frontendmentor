@@ -61,9 +61,9 @@ h6 {
   --fs-heading: 1.75rem;
   --ff-body: "Barlow", sans-serif;
   --ff-accent: "Fraunces", sans-serif;
-  --fw-regular: 600;
+  --fw-regular: bold;
   --fw-bold: 700;
-  --fw-black: 900;
+  --fw-black: bolder;
 }
 
 body {
@@ -127,6 +127,34 @@ h2 {
 
 .arrow {
   bottom: 7rem;
+}
+
+.img-container {
+  position: relative;
+}
+
+.img-container div {
+  font-size: 0.875rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-inline: 1.25rem;
+  top: 65%;
+}
+
+.img-container h2 {
+  font-size: 1.5rem;
+}
+
+.graphic-design h2,
+.graphic-design p {
+  color: var(--clr-cyan-dark);
+}
+
+.photography h2,
+.photography p {
+  color: var(--clr-blue-dark);
 }
 
 .testimonials {
