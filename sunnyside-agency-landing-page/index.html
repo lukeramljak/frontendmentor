@@ -17,7 +17,7 @@
   <body>
     <header>
       <img src="./images/logo.svg" alt="sunnyside logo" />
-      <nav>
+      <nav hidden>
         <ul>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
@@ -28,8 +28,20 @@
       <img src="./images/icon-hamburger.svg" alt="" />
     </header>
 
-    <section>
+    <section class="hero">
       <h1>We are creatives</h1>
+      <img
+        class="arrow"
+        src="./images/icon-arrow-down.svg"
+        alt="arrow pointing down" />
+      <picture>
+        <source
+          srcset="./images/desktop/image-header.jpg"
+          media="(min-width: 600px)" />
+        <img
+          src="./images/mobile/image-header.jpg"
+          alt="half an orange against a blue background" />
+      </picture>
     </section>
 
     <picture>
@@ -41,7 +53,7 @@
         alt="an egg on a yellow background" />
     </picture>
 
-    <section>
+    <section class="container">
       <h2>Transform your brand</h2>
       <p>
         We are a full-service creative agency specializing in helping brands
@@ -60,7 +72,7 @@
         alt="papaya coloured drinking glass on a papaya coloured background" />
     </picture>
 
-    <section>
+    <section class="container">
       <h2>Stand out to the right audience</h2>
       <p>
         Using a collaborative formula of designers, researchers, photographers,
@@ -70,7 +82,15 @@
       <a href="#">Learn more</a>
     </section>
 
-    <section>
+    <section class="container">
+      <picture>
+        <source
+          srcset="./images/desktop/image-graphic-design.jpg"
+          media="(min-width: 600px)" />
+        <img
+          src="./images/mobile/image-graphic-design.jpg"
+          alt="cherries against a green background" />
+      </picture>
       <h2>Graphic design</h2>
       <p>
         Great design makes you memorable. We deliver artwork that underscores
@@ -78,7 +98,15 @@
       </p>
     </section>
 
-    <section>
+    <section class="container">
+      <picture>
+        <source
+          srcset="./images/desktop/image-photography.jpg"
+          media="(min-width: 600px)" />
+        <img
+          src="./images/mobile/image-photography.jpg"
+          alt="orange against a blue background" />
+      </picture>
       <h2>Photography</h2>
       <p>
         Increase your credibility by getting the most stunning, high-quality
@@ -86,7 +114,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="container testimonials">
       <h2>Client testimonials</h2>
       <div>
         <img src="./images/image-emily.jpg" alt="client headshot" />
@@ -94,8 +122,10 @@
           We put our trust in Sunnyside and they delivered, making sure our
           needs were met and deadlines were always hit.
         </p>
-        <p>Emily R.</p>
-        <p>Marketing Director</p>
+        <div>
+          <p>Emily R.</p>
+          <p>Marketing Director</p>
+        </div>
       </div>
       <div>
         <img src="./images/image-thomas.jpg" alt="client headshot" />
@@ -103,8 +133,10 @@
           Sunnyside’s enthusiasm coupled with their keen interest in our brand’s
           success made it a satisfying and enjoyable experience.
         </p>
-        <p>Thomas S.</p>
-        <p>Chief Operating Officer</p>
+        <div>
+          <p>Thomas S.</p>
+          <p>Chief Operating Officer</p>
+        </div>
       </div>
       <div>
         <img src="./images/image-jennie.jpg" alt="client headshot" />
@@ -112,12 +144,14 @@
           Incredible end result! Our sales increased over 400% when we worked
           with Sunnyside. Highly recommended!
         </p>
-        <p>Jennie F.</p>
-        <p>Business Owner</p>
+        <div>
+          <p>Jennie F.</p>
+          <p>Business Owner</p>
+        </div>
       </div>
     </section>
 
-    <section>
+    <section class="gallery">
       <picture>
         <source
           srcset="./images/desktop/image-gallery-milkbottles.jpg"
@@ -154,12 +188,14 @@
 
     <footer>
       <img src="./images/logo.svg" alt="sunnyside logo" />
-      <ul>
-        <li>About</li>
-        <li>Services</li>
-        <li>Projects</li>
-      </ul>
-      <div>
+      <nav>
+        <ul>
+          <li>About</li>
+          <li>Services</li>
+          <li>Projects</li>
+        </ul>
+      </nav>
+      <div class="social-links">
         <img src="./images/icon-facebook.svg" alt="facebook icon" />
         <img src="./images/icon-instagram.svg" alt="instagram icon" />
         <img src="./images/icon-twitter.svg" alt="twitter icon" />
