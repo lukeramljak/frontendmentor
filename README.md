@@ -12,6 +12,9 @@ A collection of my Frontend Mentor challenges (in order of completion) to keep t
 
 ![](./nft-preview-card/screenshot.png)
 
+[News Homepage](/news-homepage/)
+![](./news-homepage/design/final_desktop.png)
+
 [Order Summary Card](/order-summary-card/)
 
 ![](./order-summary-card/screenshot.png)
