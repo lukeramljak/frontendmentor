@@ -16,6 +16,7 @@
   </head>
   <body>
     <header>
+      <img src="./images/logo.svg" alt="sunnyside logo" />
       <nav>
         <ul>
           <li><a href="#">About</a></li>
@@ -24,11 +25,21 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+      <img src="./images/icon-hamburger.svg" alt="" />
     </header>
 
     <section>
       <h1>We are creatives</h1>
     </section>
+
+    <picture>
+      <source
+        srcset="./images/desktop/image-transform.jpg"
+        media="(min-width: 600px)" />
+      <img
+        src="./images/mobile/image-transform.jpg"
+        alt="an egg on a yellow background" />
+    </picture>
 
     <section>
       <h2>Transform your brand</h2>
@@ -39,6 +50,15 @@
       </p>
       <a href="#">Learn more</a>
     </section>
+
+    <picture>
+      <source
+        srcset="./images/desktop/image-stand-out.jpg"
+        media="(min-width: 600px)" />
+      <img
+        src="./images/mobile/image-stand-out.jpg"
+        alt="papaya coloured drinking glass on a papaya coloured background" />
+    </picture>
 
     <section>
       <h2>Stand out to the right audience</h2>
@@ -69,6 +89,7 @@
     <section>
       <h2>Client testimonials</h2>
       <div>
+        <img src="./images/image-emily.jpg" alt="client headshot" />
         <p>
           We put our trust in Sunnyside and they delivered, making sure our
           needs were met and deadlines were always hit.
@@ -77,6 +98,7 @@
         <p>Marketing Director</p>
       </div>
       <div>
+        <img src="./images/image-thomas.jpg" alt="client headshot" />
         <p>
           Sunnyside’s enthusiasm coupled with their keen interest in our brand’s
           success made it a satisfying and enjoyable experience.
@@ -85,6 +107,7 @@
         <p>Chief Operating Officer</p>
       </div>
       <div>
+        <img src="./images/image-jennie.jpg" alt="client headshot" />
         <p>
           Incredible end result! Our sales increased over 400% when we worked
           with Sunnyside. Highly recommended!
@@ -94,12 +117,54 @@
       </div>
     </section>
 
+    <section>
+      <picture>
+        <source
+          srcset="./images/desktop/image-gallery-milkbottles.jpg"
+          media="(min-width: 600px)" />
+        <img
+          src="./images/mobile/image-gallery-milkbottles.jpg"
+          alt="row of milk bottles against a blue, cloudy background" />
+      </picture>
+      <picture>
+        <source
+          srcset="./images/desktop/image-gallery-orange.jpg"
+          media="(min-width: 600px)" />
+        <img
+          src="./images/mobile/image-gallery-orange.jpg"
+          alt="half an orange on a plate against an orange background" />
+      </picture>
+      <picture>
+        <source
+          srcset="./images/desktop/image-gallery-cone.jpg"
+          media="(min-width: 600px)" />
+        <img
+          src="./images/mobile/image-gallery-cone.jpg"
+          alt="waffle cone against a blue background" />
+      </picture>
+      <picture>
+        <source
+          srcset="./images/desktop/image-gallery-sugarcubes.jpg"
+          media="(min-width: 600px)" />
+        <img
+          src="./images/mobile/image-gallery-sugar-cubes.jpg"
+          alt="multiple stacked sugar cubes against a papaya coloured background" />
+      </picture>
+    </section>
+
     <footer>
+      <img src="./images/logo.svg" alt="sunnyside logo" />
       <ul>
         <li>About</li>
         <li>Services</li>
         <li>Projects</li>
       </ul>
+      <div>
+        <img src="./images/icon-facebook.svg" alt="facebook icon" />
+        <img src="./images/icon-instagram.svg" alt="instagram icon" />
+        <img src="./images/icon-twitter.svg" alt="twitter icon" />
+        <img src="./images/icon-pinterest.svg" alt="pinterest icon" />
+      </div>
     </footer>
   </body>
 </html>
